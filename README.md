@@ -13,17 +13,17 @@ Each task we'll tackle has two files: the one we'll write code in and then a ver
 
 A whirlwind tour of Python's data types, variables, basic functionality and loops. We'll run a script in the iPython interactive interpreter to load a variety of variables and then start messing with them.
 
-### [2\\_web_scrape](https://github.com/richardsalex/coding_for_journos/tree/master/2_web_scrape)
+### [2\_web_scrape](https://github.com/richardsalex/coding_for_journos/tree/master/2_web_scrape)
 
 Fetching data from the web was one of programming's original beachheads in the journalism world. We're going to grab a data table from a website and turn it into a delimited text file to use in a spreadsheet or database manager.
 
 This is a task one could arguably accomplish using Excel's "import from web" feature, so we're going to take it one step further: we'll alter our script to drill into additional detail pages and automatically extract more columns of data for our text file.
 
-### [3\\_parse_addresses](https://github.com/richardsalex/coding_for_journos/tree/master/2_parse_addresses)
+### [3\_parse_addresses](https://github.com/richardsalex/coding_for_journos/tree/master/2_parse_addresses)
 
 Data don't always arrive in a nice, neat table. We have hundreds of addresses to parse into a format that will work in Excel or a database manager, and Python is going to help us make it happen. We'll write a script that dices it all puts everything in its proper place -- one line for one location.
 
-### [4\\_make_function](https://github.com/richardsalex/coding_for_journos/tree/master/4_make_function)
+### [4\_make_function](https://github.com/richardsalex/coding_for_journos/tree/master/4_make_function)
 
 In this quick project, we'll modify the address parsing script we wrote in the previous exercise, turning it into a reusable function that we can apply to future address lists that arrive in the same problematic format.
 
