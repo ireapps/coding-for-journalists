@@ -52,7 +52,7 @@ print sentiment.upper()
 
 # In a variable called new_sentiment, put sentiment in all caps again and replace
 # 'moderately' with 'extremely'
-new_sentiment = sentiment.upper().replace('MODERATELY','EXTREMELY')
+new_sentiment = sentiment.upper().replace('MODERATELY', 'EXTREMELY')
 
 # Print the result
 print new_sentiment
@@ -70,7 +70,7 @@ ugly_string.split('San')
 print 'a'+' '+'series'+' '+'of'+' '+'words'
 
 # Do the same thing but use Python's join function
-print ' '.join(['a','series','of','words'])
+print ' '.join(['a', 'series', 'of', 'words'])
 
 # Split ugly_string apart again based on spaces, then join back together with
 # a single space between the words; call it pretty_string
@@ -131,28 +131,28 @@ print person_info
 
 # Write a for loop that prints each month in the months list
 for month in months:
-	print month
+    print month
 
 # Get a list of the keys from the person_info dictionary
 for key in person_info:
-	print key
+    print key
 
 # Write a for loop that prints the key/value pair in our person_info dictionary
 for key in person_info:
-	print 'The key is '+key+' and the value is '+person_info[key]
+    print 'The key is '+key+' and the value is '+person_info[key]
 
 # A for loop that gives a quick summary of each list in multi_list
 for sublist in multi_list:
-	print 'This list has',len(sublist),'items:'
-	for item in sublist:
-		print item
-	print '\n'
+    print 'This list has', len(sublist), 'items:'
+    for item in sublist:
+        print item
+    print '\n'
 
 # An if/else statement that checks the value in lucky_number
 if lucky_number == 7:
-	print 'Still seven!'
+    print 'Still seven!'
 else:
-	print 'Not seven anymore.'
+    print 'Not seven anymore.'
 
 
 # ------------------
@@ -161,19 +161,19 @@ else:
 
 # Define a basic function that prints the word 'beans'
 def PrintBeans():
-	print 'Beans'
+    print 'Beans'
 
 # Define another basic function that multiplies a number by itself
 def Square(number):
-	print number * number
+    print number * number
 
 # Let's turn that list summary for loop from earlier into a function
 def ListSummary(list):
-	for sublist in list:
-		print 'This list has',len(sublist),'items:'
-		for item in sublist:
-			print item
-		print '\n'
+    for sublist in list:
+        print 'This list has', len(sublist), 'items:'
+        for item in sublist:
+            print item
+        print '\n'
 
 # Append the months list to multi_list; run the ListSummary function on it
 multi_list.append(months)
