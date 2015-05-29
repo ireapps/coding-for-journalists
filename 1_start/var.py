@@ -18,13 +18,13 @@ sentiment = 'I\'m moderately excited about learning some Python!'
 fuel_2015 = 3.44
 
 # A list
-months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov']
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov']
 
 # A dictionary
 person_info = {'first_name': 'James', 'last_name': 'Halpert', 'middle': 'D', 'city': 'Philadelphia'}
 
 # A list of lists
-multi_list = [['Apple','Banana','Pear'],['Ford','Toyota','Volkswagen','Buick'],[5,3,42]]
+multi_list = [['Apple', 'Banana', 'Pear'], ['Ford', 'Toyota', 'Volkswagen', 'Buick'], [5, 3, 42]]
 
 # A string with too much whitespace
 ugly_string = '          He              loves   San  Dimas    '

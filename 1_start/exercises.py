@@ -176,5 +176,3 @@
 
 
 # Append the months list to multi_list; run the ListSummary function on it
-
-
