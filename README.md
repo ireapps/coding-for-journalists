@@ -24,7 +24,7 @@ Fetching data from the web was one of programming's original beachheads in the j
 
 This is a task one could arguably accomplish using Excel's "import from web" feature, so we're going to take it one step further: we'll alter our script to drill into additional detail pages and automatically extract more columns of data for our text file.
 
-### [3\_parse_addresses](https://github.com/richardsalex/coding_for_journos/tree/master/2_parse_addresses)
+### [3\_parse_addresses](https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses)
 
 Data don't always arrive in a nice, neat table. We have hundreds of addresses to parse into a format that will work in Excel or a database manager, and Python is going to help us make it happen. We'll write a script that dices it all puts everything in its proper place -- one line for one location.
 
@@ -41,6 +41,8 @@ Geocoding is one of those perennial data journalism problems that's gotten easie
 ### Next Steps
 
 If you're curious about the different paths for installing Python and various libraries on your own computer, some excellent resources exist as part of the [PyCAR](https://github.com/ireapps/pycar/) repository. The [take home portion](https://github.com/ireapps/pycar/blob/master/takehome/README.md) points to several tutorials and guides that cover Mac and PC setup, how to compartmentalize projects in their own virtual environments and the use of version control.
+
+If you want to use a virtualenv, we've included a (short) requirements file for ```pip``` with all the non-standard libraries used and their dependencies.
 
 Here's are stops to make as you expand your knowledge and keep practicing these news skills:
 
