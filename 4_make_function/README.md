@@ -10,6 +10,6 @@ This exercise contains five files:
 
 **call_function.py**: A script we'll write to call the parser function from **payday_parser.py** and direct it toward our HTML file.
 
-**payday_parser_done.py**: A completed and working version of **payday_parser.py**.
+**payday\_parser\_done.py**: A completed and working version of **payday_parser.py**.
 
-**call_function_done.py**: A completed and working version of **call_function.py**.
+**call\_function\_done.py**: A completed and working version of **call_function.py**.

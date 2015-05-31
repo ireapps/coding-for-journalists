@@ -1,4 +1,4 @@
-# In ipython, typing the following will load the variables from 'var.py'
+# In iPython, typing the following will load the variables from 'var.py'
 # into the interactive interpreter: %run var.py
 
 # ----------------
@@ -126,7 +126,7 @@
 
 
 # ---------------------
-# FUN WITH FLOW CONTROL
+# FUN WITH CONTROL FLOW
 # ---------------------
 
 # Write a for loop that prints each month in the months list

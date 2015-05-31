@@ -8,11 +8,11 @@ But first we have to fetch all these files. Using git and GitHub is a little bit
 
 This exercise has three files:
 
-- **var.py**: A Python script with some variables of different types, like integers, lists and dictionaries.
+- **var.py**: A Python script with some variables of different types like integers, lists and dictionaries.
 
-- **exercises.py**: A file that gives a list of exercises in the form of comments -- guidance on how to manipulate the variables in **var.py**. It's also the place we can write code to save for future reference; nearly everything we do in this task will use iPython.
+- **exercises.py**: A file that gives a list of exercises in the form of comments; guidance on how to manipulate the variables in **var.py**. It's also the place we can write code to save for future reference. Nearly everything we do in this task will use iPython.
 
-- **exercises_done.py**: Same as above, but will all the code filled in.
+- **exercises_done.py**: Same as above, but with all the code filled in.
 
 Opening iPython is as easy as typing ```ipython``` into PowerShell.
 
@@ -43,13 +43,13 @@ for gift in presents:
 ```
 Having to type this line by line into the interpreter and pay attention to indentation can be a pain.
 
-But I can write that block of code in a text editor instead, then select it all and then copy it. Switching over to iPython, I can use the built-in paste function:
+But I can write that block of code in a text editor instead, then select it all and copy it. Switching over to iPython, I can use the built-in paste function:
 
 ```
 %paste
 ```
 
-This will paste the contents of my clipboard, preserving all the indentation and other whitespace, and execute whatever code was there. Pretty handy.
+This will paste the contents of my clipboard, preserving all the indentation and other white space, and execute whatever code was there. Pretty handy.
 
 Finally, iPython has another function that will give you a recap of commands you've typed:
 

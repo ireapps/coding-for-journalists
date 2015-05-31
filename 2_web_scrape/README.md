@@ -1,6 +1,6 @@
 # 2\_web_scrape
 
-How that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from [1_start](https://github.com/richardsalex/coding_for_journos/tree/master/1_start) to varying degrees and in different combinations to create longer scripts.
+Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from [1_start](https://github.com/richardsalex/coding_for_journos/tree/master/1_start) to varying degrees and in different combinations to create longer scripts.
 
 So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's [list of domestic power reactor units](http://www.nrc.gov/reactors/operating/list-power-reactor-units.html).
 
