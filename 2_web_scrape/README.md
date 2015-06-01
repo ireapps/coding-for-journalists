@@ -10,6 +10,8 @@ One is [```requests```](http://docs.python-requests.org/en/latest/) -- it handle
 
 When we get to part two, we'll use the built-in regular expressions library [```re```](https://docs.python.org/2/library/re.html) to isolate some text from the detail pages and [```time```](https://docs.python.org/2/library/time.html) to keep us from swamping a government site with too many requests at once.
 
+A big thank you to [Anthony DeBarros](https://twitter.com/anthonydb) for allowing us to present a modified version of his web scraping example from [python-get-started](https://github.com/anthonydb/python-get-started).
+
 This exercise contains six files:
 
 - **scrape.py**: The file we'll use to write our scraping script, following the comments.
@@ -21,5 +23,4 @@ This exercise contains six files:
 - **table_example.html**: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.
 - **scrape_done.py**: A completed and working version of **scrape.py**.
  
-- **scrape_pt2_done.py**: A completed and working version of **scrape_pt2.py**.
-
+- **scrape\_pt2\_done.py**: A completed and working version of **scrape_pt2.py**. 
