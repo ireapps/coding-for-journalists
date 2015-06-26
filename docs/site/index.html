@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Coding for Journalists</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Coding for Journalists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Main</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#coding-for-journalists">Coding for Journalists</a></li>
+                
+                    <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
+                
+                    <li><a class="toctree-l4" href="#1_start">1_start</a></li>
+                
+                    <li><a class="toctree-l4" href="#295web_scrape">2_web_scrape</a></li>
+                
+                    <li><a class="toctree-l4" href="#395parse_addresses">3_parse_addresses</a></li>
+                
+                    <li><a class="toctree-l4" href="#495make_function">4_make_function</a></li>
+                
+                    <li><a class="toctree-l4" href="#595geocode">5_geocode</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="task1/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="next_steps/">Next steps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="install/">Getting set up at home</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Coding for Journalists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Main</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="coding-for-journalists">Coding for Journalists</h1>
+<p>This class is an evolving introduction to coding and the Python programming language for journalists. In addition to a tour of the fundamentals, it spans four basic projects to get you started.</p>
+<p>The first version of this course happened at the <a href="https://ire.org/conferences/ire-2015/">2015 IRE Conference in Philadelphia</a>; the repository and associated tasks have been updated throughout the summer.</p>
+<p>A few things to note before we get rolling:</p>
+<ul>
+<li>This guide and all documentation live at <a href="http://coding-for-journalists.rtfd.org">coding-for-journalists.rtfd.org</a></li>
+<li>The GitHub repository that includes all code is available from <a href="https://github.com/ireapps/coding-for-journalists">github.com/ireapps/coding-for-journalists</a></li>
+<li>A good place to raise issues with the code or ask specific questions about the code is <a href="https://github.com/ireapps/coding-for-journalists/issues">also on GitHub</a></li>
+<li><a href="mailto:alex@ire.org">Email</a> IRE Training Director Alex Richards, the primary author of this course, or <a href="http://www.twitter.com/alexrichards">contact him on Twitter</a></li>
+</ul>
+<p>Because of the pace of this class and limited amount of time available, we won't be able to easily accommodate attendees who prefer to use their own laptops during the session. </p>
+<p>Each task we'll tackle has (at least) two files: the one for writing code in and a version with "_done" appended to the name that's already been completed. Since there won't be enough time to get through every single one, you can circle back afterward, fetch these files from GitHub and work through the exercises on your own.</p>
+<h3 id="requirements">Requirements</h3>
+<p>This is designed for people who have some grounding in data journalism already and experience with spreadsheets and database managers. It's helpful if you understand Excel functions, for example, and some basic SQL.</p>
+<p>You will likely struggle if you don't know how to navigate the computer's command line, too; it involves moving between folders, running scripts and issuing commands to a Python interpreter.</p>
+<p>Here's what the next few hours have in store:</p>
+<h3 id="1_start"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a></h3>
+<p>A whirlwind tour of Python's data types, variables, basic functionality and loops. We'll run a script in the iPython interactive interpreter to load a variety of variables and then start messing with them.</p>
+<h3 id="295web_scrape"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/2_web_scrape">2_web_scrape</a></h3>
+<p>Fetching data from the web was one of programming's original beachheads in the journalism world. We're going to grab a data table from a website and turn it into a delimited text file to use in a spreadsheet or database manager.</p>
+<p>This is a task one could arguably accomplish using Excel's "import from web" feature, so we're going to take it one step further: we'll alter our script to drill into additional detail pages and automatically extract more columns of data for our text file.</p>
+<h3 id="395parse_addresses"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses">3_parse_addresses</a></h3>
+<p>Data don't always arrive in a nice, neat table. We have hundreds of addresses to parse into a format that will work in Excel or a database manager, and Python is going to help us make it happen. We'll write a script that dices it all and puts everything in its proper place -- one line for one location.</p>
+<h3 id="495make_function"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/4_make_function">4_make_function</a></h3>
+<p>In this quick project, we'll modify the address parsing script we wrote in the previous exercise, turning it into a reusable function that we can apply to future address lists that arrive in the same problematic format.</p>
+<h3 id="595geocode"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/5_geocode">5_geocode</a></h3>
+<p>Geocoding is one of those perennial data journalism problems that's gotten easier in some ways over the years, yet harder in others. While having a street address is great, having a latitude and longitude is better. We'll take the poorly formatted addresses we coaxed into a flat file and march them one at a time through an online geocoding service using a handy Python library called <a href="https://github.com/geopy/geopy">geopy</a>. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="task1/" class="btn btn-neutral float-right" title="Getting started"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="task1/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.14.0
+Build Date UTC : 2015-06-24 22:33:34.504077
+-->

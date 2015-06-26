@@ -1,0 +1,16 @@
+site_name: Coding for Journalists
+pages:
+- Main: index.md
+- Getting started: task1.md
+- Scraping the web: task2.md
+- Parsing text: task3.md
+- Making functions: task4.md
+- Geocoding addresses: task5.md
+- Next steps: next_steps.md
+- Setting up your computer: install.md
+theme: readthedocs
+repo_url: https://github.com/ireapps/coding-for-journalists/
+copyright: ©2015, Investigative Reporters & Editors, Inc.
+markdown_extensions:
+    - admonition
+    - codehilite
