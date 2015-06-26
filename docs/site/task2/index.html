@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Next steps - Coding for Journalists</title>
+  <title>Scraping the web - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Next steps";
+    var mkdocs_page_name = "Scraping the web";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -64,8 +64,15 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task2/">Scraping the web</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Scraping the web</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#295web_scrape">2_web_scrape</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -92,18 +99,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Next steps</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#next-steps">Next Steps</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#version-control">Version control</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
         
     </li>
 <li>
@@ -137,7 +134,7 @@
     
       
     
-    <li>Next steps</li>
+    <li>Scraping the web</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -151,24 +148,33 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="next-steps">Next Steps</h3>
-<p>If you're curious about the different paths for installing Python and various libraries on your own computer, some excellent resources exist as part of the <a href="https://github.com/ireapps/pycar/">PyCAR</a> repository. The <a href="https://github.com/ireapps/pycar/blob/master/takehome/README.md">take-home portion</a> points to several tutorials and guides that cover Mac and PC setup, how to compartmentalize projects in their own virtual environments and the use of version control.</p>
-<p>If you want to use a virtualenv, we've included a (short) requirements file for <code>pip</code> with all the non-standard libraries used and their dependencies.</p>
-<p>Here are stops to make as you expand your knowledge and keep practicing these news skills:</p>
+                <h1 id="295web_scrape">2_web_scrape</h1>
+<p>Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a> to varying degrees and in different combinations to create longer scripts.</p>
+<p>So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's <a href="http://www.nrc.gov/reactors/operating/list-power-reactor-units.html">list of domestic power reactor units</a>.</p>
+<p>Python comes with a library installed that's designed specifically for reading and writing CSV files (<a href="https://docs.python.org/2/library/csv.html"><code>csv</code></a>), but we're also going to need to extend Python's functionality a bit by bringing in two other libraries.</p>
+<p>One is <a href="http://docs.python-requests.org/en/latest/"><code>requests</code></a> -- it handles the job of playing a web browser that can fetch a web page and send back the underlying HTML. The other is <a href="http://www.crummy.com/software/BeautifulSoup/"><code>BeautifulSoup</code></a>, which parses the HTML into what amounts to a series of lists that we can then search, navigate and extract data from.</p>
+<p>When we get to part two, we'll use the built-in regular expressions library <a href="https://docs.python.org/2/library/re.html"><code>re</code></a> to isolate some text from the detail pages and <a href="https://docs.python.org/2/library/time.html"><code>time</code></a> to keep us from swamping a government site with too many requests at once.</p>
+<p>A big thank you to <a href="https://twitter.com/anthonydb">Anthony DeBarros</a> for allowing us to present a modified version of his web scraping example from <a href="https://github.com/anthonydb/python-get-started">python-get-started</a>.</p>
+<p>This exercise contains six files:</p>
 <ul>
-<li>Again, the <a href="https://github.com/ireapps/pycar/">PyCAR</a> repository, a daylong class taught at the 2014 and 2015 NICAR Conferences.</li>
-<li>Anthony Debarros' <a href="https://github.com/anthonydb/python-get-started">python-get-started</a> repository and his useful <a href="https://github.com/anthonydb/python-snippets">python-snippets</a>, a list of practical code examples.</li>
-<li>Ben Welsh's updated guide to building <a href="https://github.com/ireapps/first-web-scraper">a web scraper in Python</a> and his guide for building <a href="https://github.com/ireapps/first-news-app">a lightweight news app</a>.</li>
-<li><a href="http://learnpython.org">LearnPython</a> is an interactive tutorial that covers a lot of this same ground and more.</li>
-</ul>
-<h3 id="version-control">Version control</h3>
-<p>As you start feeling more comfortable with the basics, you may want to start using a version control setup like <a href="https://git-scm.com/">git</a> to catalog your scripts, collaborate with others and share your code with the world.</p>
-<p>Here are a couple of guides from NICAR presenters and other sources that may come in handy:</p>
-<ul>
-<li>Tom Meagher's <a href="http://ire.org/resource-center/tipsheets/3863/">tipsheet on git and GitHub</a></li>
-<li><a href="https://github.com/githubteacher/nicar-2015">Resources and code shared during NICAR15</a> from the fine folks at GitHub </li>
-<li>Lauren Orsini's <a href="http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oAh764aNbWfqyH">guide for beginners</a></li>
-<li>GitHub's own <a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">command cheat sheet</a></li>
+<li>
+<p><strong>scrape.py</strong>: The file we'll use to write our scraping script, following the comments.</p>
+</li>
+<li>
+<p><strong>scrape_pt2.py</strong>: The file we'll use to push our scraping script further; it contains finished code for <strong>scrape.py</strong> and open spots to add code that loops through to detail pages and collects additional information.</p>
+</li>
+<li>
+<p><strong>nrc_backup.html</strong>: A backup version of the main table we want to scrape in case there's a connection problem.</p>
+</li>
+<li>
+<p><strong>table_example.html</strong>: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.</p>
+</li>
+<li>
+<p><strong>scrape_done.py</strong>: A completed and working version of <strong>scrape.py</strong>.</p>
+</li>
+<li>
+<p><strong>scrape_pt2_done.py</strong>: A completed and working version of <strong>scrape_pt2.py</strong>. </p>
+</li>
 </ul>
               
             </div>
@@ -177,10 +183,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../install/" class="btn btn-neutral float-right" title="Setting up your computer"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../task3/" class="btn btn-neutral float-right" title="Parsing text"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../task5/" class="btn btn-neutral" title="Geocoding addresses"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../task1/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -210,10 +216,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../task5/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../task1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../install/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../task3/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

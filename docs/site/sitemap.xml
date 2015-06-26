@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2015-06-24</lastmod>
+     <lastmod>2015-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,39 @@
     
     <url>
      <loc>None/task1/</loc>
-     <lastmod>2015-06-24</lastmod>
+     <lastmod>2015-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/task2/</loc>
+     <lastmod>2015-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/task3/</loc>
+     <lastmod>2015-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/task4/</loc>
+     <lastmod>2015-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/task5/</loc>
+     <lastmod>2015-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +52,7 @@
     
     <url>
      <loc>None/next_steps/</loc>
-     <lastmod>2015-06-24</lastmod>
+     <lastmod>2015-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +60,7 @@
     
     <url>
      <loc>None/install/</loc>
-     <lastmod>2015-06-24</lastmod>
+     <lastmod>2015-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
