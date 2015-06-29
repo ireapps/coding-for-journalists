@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Making functions - Coding for Journalists</title>
+  <title>Scraping the web - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Making functions";
+    var mkdocs_page_name = "Scraping the web";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -64,8 +64,15 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task2/">Scraping the web</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Scraping the web</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#295web_scrape">2_web_scrape</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -78,15 +85,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Making functions</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#495make_function">4_make_function</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../task4/">Making functions</a>
         
     </li>
 <li>
@@ -134,7 +134,7 @@
     
       
     
-    <li>Making functions</li>
+    <li>Scraping the web</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -148,14 +148,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="495make_function">4_make_function</h1>
-<p>This is a pretty quick task -- the next time we have to deal with a list from the same agency, we shouldn't have to spend time rewriting our code from scratch or even go back to revise it to handle a new file. We have something that works, so let's turn it into a function we can call whenever we need to parse addresses for a list of financial licensees.</p>
-<p>This exercise contains five files:</p>
-<p><strong>payday_parser.py</strong>: Our parser from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses">3_parse_addresses</a>. We'll turn the existing work into a function and generalize it a bit to handle a file that's not specifically the list of licensed payday lenders.</p>
-<p><strong>consumer_installment.html</strong>: Another listing from the state of Illinois, but this time it encompasses more than 1,000 licensed consumer installment lenders.</p>
-<p><strong>call_function.py</strong>: A script we'll write to call the parser function from <strong>payday_parser.py</strong> and direct it toward our HTML file.</p>
-<p><strong>payday_parser_done.py</strong>: A completed and working version of <strong>payday_parser.py</strong>.</p>
-<p><strong>call_function_done.py</strong>: A completed and working version of <strong>call_function.py</strong>.</p>
+                <h1 id="295web_scrape">2_web_scrape</h1>
+<p>Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a> to varying degrees and in different combinations to create longer scripts.</p>
+<p>So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's <a href="http://www.nrc.gov/reactors/operating/list-power-reactor-units.html">list of domestic power reactor units</a>.</p>
+<p>Python comes with a library installed that's designed specifically for reading and writing CSV files (<a href="https://docs.python.org/2/library/csv.html"><code>csv</code></a>), but we're also going to need to extend Python's functionality a bit by bringing in two other libraries.</p>
+<p>One is <a href="http://docs.python-requests.org/en/latest/"><code>requests</code></a> -- it handles the job of playing a web browser that can fetch a web page and send back the underlying HTML. The other is <a href="http://www.crummy.com/software/BeautifulSoup/"><code>BeautifulSoup</code></a>, which parses the HTML into what amounts to a series of lists that we can then search, navigate and extract data from.</p>
+<p>When we get to part two, we'll use the built-in regular expressions library <a href="https://docs.python.org/2/library/re.html"><code>re</code></a> to isolate some text from the detail pages and <a href="https://docs.python.org/2/library/time.html"><code>time</code></a> to keep us from swamping a government site with too many requests at once.</p>
+<p>A big thank you to <a href="https://twitter.com/anthonydb">Anthony DeBarros</a> for allowing us to present a modified version of his web scraping example from <a href="https://github.com/anthonydb/python-get-started">python-get-started</a>.</p>
+<p>This exercise contains six files:</p>
+<ul>
+<li>
+<p><strong>scrape.py</strong>: The file we'll use to write our scraping script, following the comments.</p>
+</li>
+<li>
+<p><strong>scrape_pt2.py</strong>: The file we'll use to push our scraping script further; it contains finished code for <strong>scrape.py</strong> and open spots to add code that loops through to detail pages and collects additional information.</p>
+</li>
+<li>
+<p><strong>nrc_backup.html</strong>: A backup version of the main table we want to scrape in case there's a connection problem.</p>
+</li>
+<li>
+<p><strong>table_example.html</strong>: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.</p>
+</li>
+<li>
+<p><strong>scrape_done.py</strong>: A completed and working version of <strong>scrape.py</strong>.</p>
+</li>
+<li>
+<p><strong>scrape_pt2_done.py</strong>: A completed and working version of <strong>scrape_pt2.py</strong>. </p>
+</li>
+</ul>
               
             </div>
           </div>
@@ -163,10 +183,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../task5/" class="btn btn-neutral float-right" title="Geocoding addresses"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../task3/" class="btn btn-neutral float-right" title="Parsing text"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../task3/" class="btn btn-neutral" title="Parsing text"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../task1/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -176,7 +196,7 @@
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, Investigative Reporters & Editors, Inc.</p>
+      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -196,10 +216,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../task3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../task1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../task5/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../task3/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

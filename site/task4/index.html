@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Geocoding addresses - Coding for Journalists</title>
+  <title>Making functions - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Geocoding addresses";
+    var mkdocs_page_name = "Making functions";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -78,22 +78,22 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task4/">Making functions</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Making functions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#495make_function">4_make_function</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Geocoding addresses</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#5_geocode">5_geocode</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../task5/">Geocoding addresses</a>
         
     </li>
 <li>
@@ -134,7 +134,7 @@
     
       
     
-    <li>Geocoding addresses</li>
+    <li>Making functions</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -148,30 +148,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="5_geocode">5_geocode</h1>
-<p>For any kind of analysis that involves mapping, having coordinates is a must. En masse, though, they aren't always easy to come by.</p>
-<p>Open-source geographic information systems like <a href="http://www.qgis.org">QGIS</a> don't have built-in options to figure out a location's latitude and longitude; <a href="http://www.esri.com/software/arcgis/arcgisonline/credits">Esri</a> charges for some of its online geocoding services, too.</p>
-<p>Enter <a href="https://github.com/geopy/geopy">geopy</a>, a Python library that's designed to interact with a slew of third-party geolocation APIs. As part of a larger script, we can read lines of address data from a CSV file, send each through one of these services and return the results.</p>
-<p>In this example, we'll be using Google's geocoding service, which is good at properly interpreting an address string even when it's partially malformed or contains extraneous information. As a free service, however, it will only geocode 2,500 addresses in a 24-hour period.</p>
-<p>We'll be using the CSV file we made by parsing payday lender addresses from 3_parse_addresses. Our goal at the end is to have a new CSV file with three additional fields of information:</p>
-<ul>
-<li>Google's match for the address</li>
-<li>Latitude in decimal degrees (Y coordinate)</li>
-<li>Longitude in decimal degrees (X coordinate)</li>
-</ul>
-<p>Google's free geocoder can only handle five requests per second, so we're going to use Python's time functions to slow our requests down and set up a control flow so that we're all only geocoding the first five addresses -- a condition that can be removed at your discretion if you're working through this task on your own later.</p>
-<p>This exercise contains three files:</p>
-<ul>
-<li>
-<p><strong>geocode.py</strong>: A script we'll write to pass addresses through Google's geocoding service. It will take the results along with our initial data fields and send them all to a new CSV file.</p>
-</li>
-<li>
-<p><strong>payday_lenders.csv</strong>: Our completed CSV file from 3_parse_addresses.</p>
-</li>
-<li>
-<p><strong>geocode_done.py</strong>: A completed and working version of <strong>geocode.py</strong>.</p>
-</li>
-</ul>
+                <h1 id="495make_function">4_make_function</h1>
+<p>This is a pretty quick task -- the next time we have to deal with a list from the same agency, we shouldn't have to spend time rewriting our code from scratch or even go back to revise it to handle a new file. We have something that works, so let's turn it into a function we can call whenever we need to parse addresses for a list of financial licensees.</p>
+<p>This exercise contains five files:</p>
+<p><strong>payday_parser.py</strong>: Our parser from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses">3_parse_addresses</a>. We'll turn the existing work into a function and generalize it a bit to handle a file that's not specifically the list of licensed payday lenders.</p>
+<p><strong>consumer_installment.html</strong>: Another listing from the state of Illinois, but this time it encompasses more than 1,000 licensed consumer installment lenders.</p>
+<p><strong>call_function.py</strong>: A script we'll write to call the parser function from <strong>payday_parser.py</strong> and direct it toward our HTML file.</p>
+<p><strong>payday_parser_done.py</strong>: A completed and working version of <strong>payday_parser.py</strong>.</p>
+<p><strong>call_function_done.py</strong>: A completed and working version of <strong>call_function.py</strong>.</p>
               
             </div>
           </div>
@@ -179,10 +163,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../next_steps/" class="btn btn-neutral float-right" title="Next steps"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../task5/" class="btn btn-neutral float-right" title="Geocoding addresses"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../task4/" class="btn btn-neutral" title="Making functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../task3/" class="btn btn-neutral" title="Parsing text"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -192,7 +176,7 @@
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, Investigative Reporters & Editors, Inc.</p>
+      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -212,10 +196,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../task4/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../task3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../next_steps/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../task5/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started - Coding for Journalists</title>
+  <title>Parsing text - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Getting started";
+    var mkdocs_page_name = "Parsing text";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -57,15 +57,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Getting started</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#1_start">1_start</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../task1/">Getting started</a>
         
     </li>
 <li>
@@ -78,8 +71,15 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task3/">Parsing text</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Parsing text</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#395parse_addresses">3_parse_addresses</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -134,7 +134,7 @@
     
       
     
-    <li>Getting started</li>
+    <li>Parsing text</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -148,50 +148,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="1_start">1_start</h1>
-<p>This is a crash course in some of Python's major data types and and how to tame them. We'll be doing things like mashing strings together, running through items in a list and defining very simple functions.</p>
-<p>We'll be using iPython's interactive interpreter, which means we have access to a few extra features (which iPython modestly calls <em>magic functions</em>).</p>
-<p>But first we have to fetch all these files. Using git and GitHub is a little bit outside the scope of this class (at the moment), so we'll download a <a href="https://github.com/richardsalex/coding_for_journos/archive/master.zip">zipped copy of the repo</a>, unzip it, and navigate to it using PowerShell.</p>
+                <h1 id="395parse_addresses">3_parse_addresses</h1>
+<p>It would be great if every piece of data you came across was in a format that lent itself to easy capture. In the same vein as the text extraction from reactor detail pages in our last example, we're going to pick apart an HTML file of licensed payday lenders (that's mostly text) and turn it into a flat CSV file where one row is one record.</p>
+<p>In this file, addresses can span three, four or five lines. Sometimes it's on four lines because a lender does business in Illinois under another name; in others, it's because the lender operates out of a suite, room or building stored on a line separate from the street address. This means that our script needs to behave four different ways depending on how many lines it encounters for each address, and we'll switch among those behaviors with <code>if/elif</code> syntax.</p>
+<p>We'll again use <code>BeautifulSoup</code>, but primarily to break out the portion of the file we want to capture for the resulting CSV.</p>
 <p>This exercise has three files:</p>
 <ul>
 <li>
-<p><strong>var.py</strong>: A Python script with some variables of different types like integers, lists and dictionaries.</p>
+<p><strong>payday.py</strong>: The file we'll use to write our address parser, following the comments.</p>
 </li>
 <li>
-<p><strong>exercises.py</strong>: A file that gives a list of exercises in the form of comments; guidance on how to manipulate the variables in <strong>var.py</strong>. It's also the place we can write code to save for future reference. Nearly everything we do in this task will use iPython.</p>
+<p><strong>payday_lenders.html</strong>: A simple HTML file that lists nearly 500 payday lenders licensed to do business in Illinois. Their addresses are split across multiple lines.</p>
 </li>
 <li>
-<p><strong>exercises_done.py</strong>: Same as above, but with all the code filled in.</p>
+<p><strong>payday_done.py</strong>: A completed and working version of <strong>payday.py</strong>.</p>
 </li>
 </ul>
-<p>Opening iPython is as easy as typing <code>ipython</code> into PowerShell.</p>
-<p>To get everything from <strong>var.py</strong> queued up, we can either run it from within iPython using one of the <em>magic functions</em>:</p>
-<pre class="codehilite"><code>%run var.py</code></pre>
-
-
-<p>Or we can use the more traditional method of importing everything defined in a script, treating it as a module:</p>
-<pre class="codehilite"><code>from var import *</code></pre>
-
-
-<p>This will make a little more sense as we start bringing in other Python libraries to tackle our other tasks. Either way, it's going to get us those variables defined in <strong>var.py</strong>. We can quickly test that these variables were loaded by typing <code>lucky_number</code>.</p>
-<p>Let's say I have a longer chunk of code that I want to try out in iPython to see if it works as expected.</p>
-<pre class="codehilite"><code>presents = ['A brand new car', 'Socks']
-
-for gift in presents:
-    if gift == 'A brand new car':
-        print gift, '&lt;- Oh yeah!'
-    else:
-        print gift, '&lt;- Meh.'</code></pre>
-
-
-<p>Having to type this line by line into the interpreter and pay attention to indentation can be a pain.</p>
-<p>But I can write that block of code in a text editor instead, then select it all and copy it. Switching over to iPython, I can use the built-in paste function:</p>
-<pre class="codehilite"><code>%paste</code></pre>
-
-
-<p>This will paste the contents of my clipboard, preserving all the indentation and other white space, and execute whatever code was there. Pretty handy.</p>
-<p>Finally, iPython has another function that will give you a recap of commands you've typed:</p>
-<pre class="codehilite"><code>%history</code></pre>
               
             </div>
           </div>
@@ -199,10 +171,10 @@ for gift in presents:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../task2/" class="btn btn-neutral float-right" title="Scraping the web"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../task4/" class="btn btn-neutral float-right" title="Making functions"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Main"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../task2/" class="btn btn-neutral" title="Scraping the web"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -212,7 +184,7 @@ for gift in presents:
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, Investigative Reporters & Editors, Inc.</p>
+      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -232,10 +204,10 @@ for gift in presents:
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../task2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../task2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../task4/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
