@@ -1,5 +1,23 @@
 # 1_start
 
+
+
+Before we do anything, we need to understand some of the components we'll be interacting with and switching between.
+
+- **The Python interpreter**: we input commands, define variables and functions, write loops, etc. The interpreter parses it all for us, line by line as we write them, and takes action.
+
+- **Text editor**: this is where we essentially chain a bunch of commands together within a single document and save it as a Python script (ending in *.py*).
+
+- **The command line**: Accessed via "Terminal" on OS X or "cmd.exe" (or possibly PowerShell) on Windows. It's where we run the Python interpreter, among other programs, and issue commands that allow us to navigate our computer's folders.
+
+That's pretty much it. These three pieces give you a container for code you're writing, the program to run it and a method to get it all running. We'll be doing some switching back and forth between entering code directly into the interpreter we run from the command line and the text editor.
+
+As we progress, we'll be dealing with two other things.
+
+- **External libraries**: Python comes with a standard library that has a ton of useful stuff. Developers have written libraries that take this functionality even further. By importing parts of these libraries into our Python script, we can do complex things, like fetch a web page, with a single line of code.
+
+- **A virtual enviroment**: The bubble where all of our code lives.
+
 This is a crash course in some of Python's major data types and and how to tame them. We'll be doing things like mashing strings together, running through items in a list and defining very simple functions.
 
 We'll be using iPython's interactive interpreter, which means we have access to a few extra features (which iPython modestly calls *magic functions*).

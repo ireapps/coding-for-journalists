@@ -59,9 +59,12 @@ To check that Python was installed successfully, issue the following command:
 python --version
 ```
 
-If everything went as planned, this should spit out the version number of Python you just installed. If you get an error message that reads something like ```'python' is not recognized as an internal or external command, operable program or batch file``` things have gone badly awry; Python may not have been added to your command prompt PATH, or you'll need to attempt to reinstall.
+If everything went as planned, this should spit out the version number of Python you just installed. 
 
-If all is well with Python, let's check on **pip**:
+!!! caution
+	If you get an error message that says Python isn't recognized as a legitimate command, something's gone awry. Python may not have been added to your command prompt PATH, which you can resolve by following step 3 in [this guide](http://www.anthonydebarros.com/2014/02/16/setting-up-python-in-windows-8-1/). If the main Python directory, its Scripts folder and site-packages are all in the PATH, you'll need to attempt to reinstall.
+
+Once we've verified all is well with Python, let's turn our attention to **pip**:
 
 ```bash
 pip list
@@ -126,7 +129,12 @@ Yes, more difficult.
 
 The version accompanying OS X has been tinkered with by Apple, and it's responsible for other functionality on your computer. It's also likely out of date.
 
-The accepted way to get around this problem is 
+The accepted way to get around this problem is to install an OS X program called [Homebrew](http://brew.sh/), which is essentially a package manager for your system -- similar to what pip does for Python. It will allow you to download an independent and updateable version of Python that you can use going forward. A side benefit is that pip comes with the Python you install with Homebrew.
+
+Not to evangelize about Homebrew too much, but if you decide to travel down the path leading to some of the more complex data journalism techniques on the command line, you'll find other uses for Homebrew and its many packages beyond just providing a clean copy of Python.
+
+!!! note
+	You can also use the built-in OS X Python if you wish. The next step in that case will be getting pip up and running. 
 
 ## Getting "Coding for Journalists"
 
