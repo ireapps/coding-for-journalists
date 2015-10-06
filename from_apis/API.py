@@ -5,8 +5,6 @@
 # http://dev.socrata.com/foundry/#/data.cityofchicago.org/6zsd-86xi
 
 
-# When were the most recent records added? 
-
 import json
 import requests
 import sqlite3
@@ -18,13 +16,14 @@ crime_url = 'https://data.cityofchicago.org/resource/6zsd-86xi.json'
 # returns it. We'll have it convert the date it finds into a datetime object Python
 # can do some math on.
 def date_check():
-	r = requests.get(crime_url + '?$limit=1&$order=date DESC')
+	# URL: https://data.cityofchicago.org/resource/6zsd-86xi.json?$limit=1&$order=date DESC
+	r = requests.get('{0}?$limit=1&$order=date DESC'.format(crime_url))
 	most_recent_crime = r.json()
 	date_string = most_recent_crime[0]['date'][:10]
 	return datetime.strptime(date_string,'%Y-%m-%d')
 	
 # We're going to have to convert dates back and forth between strings a bit. Better to 
-# just go ahead and whip a short function for it.
+# just go ahead and whip up a short function for it.
 def date_to_string(dt):
 	return dt.date().isoformat()
 	
@@ -33,7 +32,7 @@ def date_to_string(dt):
 def crime_week(dt):
 	end_date = date_to_string(dt)
 	start_date = date_to_string(dt - timedelta(days=6))
-	query_url = crime_url + '?$limit=50000&$where=date between \'%sT00:00:00\' and \'%sT23:59:59\'' % (start_date, end_date)
+	query_url = '{0}?$limit=50000&$where=date between \'{1}T00:00:00\' and \'{2}T23:59:59\''.format(crime_url, start_date, end_date)
 	r = requests.get(query_url)
 	return r.json()
 	
@@ -81,7 +80,7 @@ c.execute("CREATE TABLE IF NOT EXISTS newtest (" + ", ".join(fields) + ")")
 
 # So now we have to write a SQL statement that will insert values into the right fields, 
 # regardless of how long the field is. To make this happen, we're also going to need to 
-# deal with some dict order weirdness.
+# deal with some dict order weirdness by specifying fields for our inserted values.
 
 for rec in week:
 	cols = []
@@ -90,25 +89,44 @@ for rec in week:
 		if item != 'location':
 			cols.append(item)
 			vals.append(str(rec[item]))
+	# SQL format: INSERT INTO <table> (<col1>, <col2>, ...) VALUES ('<val1>', '<val2>', ...)
 	c.execute("INSERT INTO newtest (" + ",".join(cols) + ") VALUES ('" + "','".join(vals) + "')")
-	
 conn.commit()
-	
+			
 # Some basic queries based on the data.
 
-# Top 10 beats for different crimes
-c.execute('''SELECT beat, count(*)
-FROM newtest
-WHERE primary_type = 'ROBBERY'
-GROUP BY 1
-ORDER BY 2 DESC
-LIMIT 0,5''')
-top_rob = c.fetchall()
+# A function to assess the week's crimes.
+def high_crime_areas(main_type, area, top):
+	valid_areas = ['district', 'beat', 'community_area', 'ward']
+	if area in valid_areas:
+		result = [area, main_type]
+		c.execute('''SELECT {0}, count(*)
+                     FROM newtest
+                     WHERE primary_type = '{1}'
+                     GROUP BY 1
+                     ORDER BY 2 DESC
+                     LIMIT 0,{2}'''.format(area, main_type, top))
+        result.append(c.fetchall())
+        return result
+        
+# And a function to format the result of high_crime_areas!
+def show_crimes(result):
+	head_string = '{0} BY {1}'.format(result[1], result[0])
+	print head_string.upper().replace('_',' ')
+	print '-' * len(head_string)
+	for t in result[2]:
+		print '{0}: {1}'.format(t[0], t[1])
+		
+# This could be set up to run some quick summaries as soon as the data is processed by 
+# the script.
+show_crimes(high_crime_areas('HOMICIDE', 'district', 100))
+show_crimes(high_crime_areas('NARCOTICS', 'beat', 5))
+show_crimes(high_crime_areas('ASSAULT', 'ward', 10))
 
-for item in top_rob:
-    print 'Beat %s: %s robberies' % (item[0], item[1])
-    
+        
 # Communities with the top violent crime rates
+
+
 
 
 # will have to be filled in with req process
