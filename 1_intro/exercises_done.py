@@ -1,5 +1,64 @@
+# ----------------
+# BASIC DATA TYPES
+# ----------------
+
+# Print your name in the interpreter.
+print 'Jane Smith'
+
+# Print an integer.
+print 8
+
+# Print a basic math equation.
+print 2 + 2
+
+# Define a string called my_string and wrap it in single quotes.
+my_string = 'This is a string.'
+
+# Define another string called my_other_string and wrap it in double quotes.
+my_other_string = "This is also a string."
+
+# Define an integer (whole number) and call it my_integer.
+my_integer = 14
+
+# Define a float (number that contains a fraction of one) called my_float.
+my_float = 5.45
+
+# Define a text string in unicode format (we'll see these pop up throughout.
+# the workshop.
+my_unicode_string = u'ASCII is holding me back — you know it\'s true.'
+
+# Define a boolean value (True/False) called my_boolean.
+my_boolean = True
+
+# Print my_string.
+print my_string
+
+# Print my_string and my_other_string together.
+print my_string + my_other_string
+
+# Let's get a space in there.
+print my_string + ' ' + my_other_string
+
+# Print my_integer divided by 3.
+print my_integer / 3
+
+# If we don't define one of these as a float, Python 2.7 lops off extra.
+# digits. Try it again with the 3 as a float.
+print my_integer / float(3)
+
+# Check the data types of some of what we defined above.
+print type(my_integer)
+print type(my_string)
+print type(my_boolean)
+
+# Print the result of checking whether my_boolean is True and is not True.
+print my_boolean is True
+print my_boolean is not True
+
+
 # In iPython, typing the following will load the variables from 'var.py'
 # into the interactive interpreter: %run var.py
+# We can also type: from var import *
 
 # ----------------
 # FUN WITH NUMBERS
@@ -75,6 +134,57 @@ print ' '.join(['a', 'series', 'of', 'words'])
 # Split ugly_string apart again based on spaces, then join back together with
 # a single space between the words; call it pretty_string
 pretty_string = ' '.join(ugly_string.split())
+
+# Print the string 'apple ' three times
+print 'apple ' * 3
+
+
+# -----
+# LISTS
+# -----
+
+# Define a list called my_list that contains three strings: Tomato, Celery
+# and Carrot
+my_list = ['Tomato', 'Celery', 'Carrot']
+
+# Print the list 
+print my_list
+
+# Print the first item in the list
+print my_list[0]
+
+# Print the second item in the list
+print my_list[1]
+
+# Add 'Potato' to my_list
+my_list.append('Potato')
+
+# Print the contents of my_list again
+print my_list
+
+# ------------
+# DICTIONARIES
+# ------------
+
+# Make a simple dictionary of four items called my_dict: 
+# class: Python, location: New York, time: 9am, attendance: 20
+
+my_dict = {'class': 'Python', 'location': 'New York', 'time': '9am', 'attendance': 20}
+
+# Print my_dict.
+print my_dict
+
+# Print the value for location.
+print my_dict['location']
+
+# Print the keys in my_dict.
+print my_dict.keys()
+
+# Print the values in my_dict.
+print my_dict.values()
+
+# Check to see if a key 'month' exists in my_dict
+print my_dict.has_key('month')
 
 
 # ---------------------------------
@@ -163,9 +273,18 @@ else:
 def PrintBeans():
     print 'Beans'
 
+# Run the PrintBeans() function.
+PrintBeans()
+
 # Define another basic function that multiplies a number by itself
 def Square(number):
     print number * number
+
+# Find the square of 27.
+Square(27)
+
+# Try finding the square of 'apple.'
+Square('apple')
 
 # Let's turn that list summary for loop from earlier into a function
 def ListSummary(list):
