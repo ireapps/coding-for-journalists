@@ -1,0 +1,81 @@
+<html>
+
+<!--
+So this is a quick example of throwing GeoJSON onto a Leaflet map. It is literally
+hacked together from tutorials on their website (http://leafletjs.com/) and uses
+tiles from OpenStreetMap.
+-->
+
+<head>
+	<title>Chicago Violent Crime and Homicide Map</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+</head>
+<body>
+
+	<div id="map" style="width: 450px; height: 500px"></div>
+	
+	<!--
+	I didn't want to have to include another JS library or plugin to load the
+	GeoJSON, so we're just treating them like additional JS files and declaring them
+	as variables. I find this dumb and weird, but it works.
+	-->
+	
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+	<script src="w_rate.geojson" type="text/javascript"></script>
+	<script src="test.geojson" type="text/javascript"></script>
+	<script>
+		
+		// Create a map centered on coordinates and zoomed to a specific level
+		var map = L.map('map').setView([41.8457876, -87.6828846], 10);
+		
+		// Grab tiles from OpenStreetMap so we don't have a featureless gray box.
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		
+		// This function makes a popup for our community map.
+		function onEachFeature(feature, layer) {
+			// popup for COMMUNITY if exists
+			if (feature.properties && feature.properties.COMMUNITY) {
+				layer.bindPopup(feature.properties.COMMUNITY+'<br><br>'+feature.properties.VC_RATE+' violent crimes per 10,000 residents');
+			}
+		}
+
+		// This function shades the map based on different values.
+		function getColor(d) {
+			return d > 20 ? '#a50f15' :
+				   d > 15 ? '#de2d26' :
+				   d > 10 ? '#fb6a4a' :
+				   d > 5  ? '#fcae91' :
+				   d > 1  ? '#fee5d9' :
+							'#fee5d9';
+		}
+		
+		// This function styles the communities based on the above function.	
+		function styleCA(feature) {
+			return {
+				fillColor: getColor(feature.properties.VC_RATE),
+				weight: 2,
+				opacity: 1,
+				color: 'white',
+				dashArray: '3',
+				fillOpacity: 0.7
+			}
+		}
+    	// Get our GeoJSON from a variable declared in ca.geojson
+		L.geoJson(comm, {
+			style: styleCA,
+    		onEachFeature: onEachFeature
+		}).addTo(map);
+		
+		L.geoJson(test, {
+    		onEachFeature: onEachFeature
+		}).addTo(map);
+
+	</script>
+	
+<body>
+
+</html>
