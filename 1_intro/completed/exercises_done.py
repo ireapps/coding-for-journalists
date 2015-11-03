@@ -147,7 +147,7 @@ print 'apple ' * 3
 # and Carrot
 my_list = ['Tomato', 'Celery', 'Carrot']
 
-# Print the list 
+# Print the list
 print my_list
 
 # Print the first item in the list
@@ -166,7 +166,7 @@ print my_list
 # DICTIONARIES
 # ------------
 
-# Make a simple dictionary of four items called my_dict: 
+# Make a simple dictionary of four items called my_dict:
 # class: Python, location: New York, time: 9am, attendance: 20
 
 my_dict = {'class': 'Python', 'location': 'New York', 'time': '9am', 'attendance': 20}
@@ -184,7 +184,7 @@ print my_dict.keys()
 print my_dict.values()
 
 # Check to see if a key 'month' exists in my_dict
-print my_dict.has_key('month')
+print 'month' in my_dict
 
 
 # ---------------------------------
@@ -277,6 +277,8 @@ def PrintBeans():
 PrintBeans()
 
 # Define another basic function that multiplies a number by itself
+
+
 def Square(number):
     print number * number
 
@@ -287,6 +289,8 @@ Square(27)
 Square('apple')
 
 # Let's turn that list summary for loop from earlier into a function
+
+
 def ListSummary(list):
     for sublist in list:
         print 'This list has', len(sublist), 'items:'

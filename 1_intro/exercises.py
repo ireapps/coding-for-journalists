@@ -1,5 +1,64 @@
+# ----------------
+# BASIC DATA TYPES
+# ----------------
+
+# Print your name in the interpreter.
+
+
+# Print an integer.
+
+
+# Print a basic math equation.
+
+
+# Define a string called my_string and wrap it in single quotes.
+
+
+# Define another string called my_other_string and wrap it in double quotes.
+
+
+# Define an integer (whole number) and call it my_integer.
+
+
+# Define a float (number that contains a fraction of one) called my_float.
+
+
+# Define a text string in unicode format (we'll see these pop up throughout.
+# the workshop.
+
+
+# Define a boolean value (True/False) called my_boolean.
+
+
+# Print my_string.
+
+
+# Print my_string and my_other_string together.
+
+
+# Let's get a space in there.
+
+
+# Print my_integer divided by 3.
+
+
+# If we don't define one of these as a float, Python 2.7 lops off extra.
+# digits. Try it again with the 3 as a float.
+
+
+# Check the data types of some of what we defined above.
+
+
+
+
+# Print the result of checking whether my_boolean is True and is not True.
+
+
+
+
 # In iPython, typing the following will load the variables from 'var.py'
 # into the interactive interpreter: %run var.py
+# We can also type: from var import *
 
 # ----------------
 # FUN WITH NUMBERS
@@ -74,6 +133,57 @@
 
 # Split ugly_string apart again based on spaces, then join back together with
 # a single space between the words; call it pretty_string
+
+
+# Print the string 'apple ' three times
+
+
+
+# -----
+# LISTS
+# -----
+
+# Define a list called my_list that contains three strings: Tomato, Celery
+# and Carrot
+
+
+# Print the list
+
+
+# Print the first item in the list
+
+
+# Print the second item in the list
+
+
+# Add 'Potato' to my_list
+
+
+# Print the contents of my_list again
+
+
+# ------------
+# DICTIONARIES
+# ------------
+
+# Make a simple dictionary of four items called my_dict:
+# class: Python, location: New York, time: 9am, attendance: 20
+
+
+
+# Print my_dict.
+
+
+# Print the value for location.
+
+
+# Print the keys in my_dict.
+
+
+# Print the values in my_dict.
+
+
+# Check to see if a key 'month' exists in my_dict
 
 
 
@@ -163,8 +273,19 @@
 
 
 
+# Run the PrintBeans() function.
+
+
 # Define another basic function that multiplies a number by itself
 
+
+
+
+
+# Find the square of 27.
+
+
+# Try finding the square of 'apple.'
 
 
 # Let's turn that list summary for loop from earlier into a function
@@ -175,4 +296,8 @@
 
 
 
+
+
 # Append the months list to multi_list; run the ListSummary function on it
+
+
