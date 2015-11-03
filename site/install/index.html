@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setting up your computer - Coding for Journalists</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Setting up your computer";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Coding for Journalists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Main</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task1/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task2/">Scraping the web</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task3/">Parsing text</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task4/">Making functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Setting up your computer</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#the-ingredients-for-an-install">The ingredients for an install</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#on-windows">On Windows</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#on-os-x">On OS X</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#getting-coding-for-journalists">Getting "Coding for Journalists"</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Coding for Journalists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Setting up your computer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ireapps/coding-for-journalists/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="the-ingredients-for-an-install">The ingredients for an install</h2>
+<p>Getting to the point where you can do this at work or home can be half the battle. The good news is that it can pretty much all be had for free. Let's talk for a second about what this will require:</p>
+<ul>
+<li><strong>A text editor</strong></li>
+<li><strong>Python</strong></li>
+<li><strong>Access to a command line interface</strong></li>
+<li><strong>pip</strong></li>
+<li><strong>virtualenv</strong></li>
+<li><strong>virtualenvwrapper</strong></li>
+<li><strong>A connection to the internet</strong></li>
+</ul>
+<p>Here's what the various parts do, as well as why you need them:</p>
+<p><strong>The text editor</strong> allows you to write scripts for the Python interpreter in a plain text format. Something along the lines of a full word processor (think Microsoft Word or Apple's Pages) won't cut it; those are designed for presentation and resulting files will be cluttered with a bunch of elements that control text styling. Having one at your disposal is a must for writing code and great for examining data.</p>
+<p><strong>Python</strong> is the engine of the entire affair; it's a code interpreter that's going to look at the commands you write and then faithfully execute them. At the moment this code and guide is designed around version 2.7.</p>
+<p><strong>Access to a command line interface</strong> in the form of the OS X terminal or Windows command prompt. It will be used to run Python scripts and access the Python interpreter.</p>
+<p><strong>pip</strong> is an external Python library that helps you manage the download and installation of packages that don't come with standard Python. There's a lot there already, sure, but people have written new modules to assist with tasks like web scraping and dealing with PDF files. It makes adding new functionality as easy as typing <code>pip install &lt;some new package&gt;</code>. <strong>pip</strong> will fetch it from the internet and install it for you -- and do the same for any other packages required to make it all work correctly.</p>
+<p><strong>virtualenv</strong> is an external Python library that allows you to create virtual sandboxes where your scripts can live and have their own packages, completely compartmentalized from one another. It solves a problem in development where you may have conflicting package needs among different pieces of code. It also insulates you from mucking around with the core Python and <strong>pip</strong> you'll be installing. When a new virtual environment is created, it springs up with its own copy of Python and <strong>pip</strong>. The packages in the environment can be modified, removed and reset at will, but it will never screw with the underlying Python and <strong>pip</strong> on the system, even if the environment is deleted.</p>
+<p><strong>virtualenvwrapper</strong> is another external Python library that just makes it easier to deal with the various virtual environments; it keeps them organized in one place, and you can easily jump in and out of environments with a few brief commands. It's important to note that the Windows command prompt has its own version (<a href="https://pypi.python.org/pypi/virtualenvwrapper-win"><strong>virtualenvwrapper-win</strong></a>).</p>
+<p><strong>A connection to the internet</strong> is necessary because <strong>pip</strong> will be fetching packages from the web.</p>
+<h2 id="on-windows">On Windows</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide is for Windows 8.1. For other versions of Windows, this process should be similar.</p>
+</div>
+<p>1. <strong>Download Python 2.7</strong></p>
+<p>You'll want to download the <a href="https://www.python.org/downloads/windows">most current release of Python 2 for Windows</a>; you'll likely have the best luck with the <em>Windows x86 MSI installer</em>.</p>
+<hr />
+<p>2. <strong>Install Python 2.7</strong></p>
+<p>After opening the installer, there are two things you'll want to include during the installation process that should make your life much easier.</p>
+<p>First, the installer will give you the option of having <strong>pip</strong> ride along with the rest of the Python installation. By default, this should already be selected for you.</p>
+<p>Second, the installer will give you the option to add python.exe to your PATH. All that means is that typing <code>python</code> at the command prompt will get you to the interpreter or give you the ability to execute a Python script, regardless of where you've navigated on your system. By default, this will <strong>not</strong> be selected; you'll have to change it on your own.</p>
+<p><strong>Make sure both of these options are selected before completing the install.</strong></p>
+<hr />
+<p>3. <strong>Verify installation of Python and pip</strong></p>
+<p>Open the Windows command prompt. If you're unable to locate it in the "Start" menu, search for an application called <strong>cmd</strong>.</p>
+<p>To check that Python was installed successfully, issue the following command:</p>
+<pre class="codehilite"><code class="language-bash">python --version</code></pre>
+
+
+<p>If everything went as planned, this should spit out the version number of Python you just installed. If you get an error message that reads something like <code>'python' is not recognized as an internal or external command, operable program or batch file</code> things have gone badly awry; Python may not have been added to your command prompt PATH, or you'll need to attempt to reinstall.</p>
+<p>If all is well with Python, let's check on <strong>pip</strong>:</p>
+<pre class="codehilite"><code class="language-bash">pip list</code></pre>
+
+
+<p>If <strong>pip</strong> was installed correctly along with Python, you should get a quick recap of nonstandard packages it can find. The output probably looks something like:</p>
+<pre class="codehilite"><code class="language-bash">pip (7.0.1)
+setuptools (16.0)</code></pre>
+
+
+<p>It may also have a message griping about an outdated version of <strong>pip</strong>, but let's not worry about that right now.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If the command prompt threw some kind of error at you, <strong>pip</strong> may not be installed and there are a couple of things you can try. You can reinstall Python from the MSI file and make sure the option to install <strong>pip</strong> is selected. It can also be installed manually by following <a href="https://pip.pypa.io/en/stable/installing.html">the instructions here</a>.</p>
+</div>
+<hr />
+<p>4. <strong>Install virtualenv</strong></p>
+<p>With <strong>pip</strong>, adding the <strong>virtualenv</strong> package is as easy as typing:</p>
+<pre class="codehilite"><code class="language-bash">pip install virtualenv</code></pre>
+
+
+<p>It should appear among pip and setuptools when you type <code>pip list</code> and you should be able to verify the version with:</p>
+<pre class="codehilite"><code class="language-bash">virtualenv --version</code></pre>
+
+
+<hr />
+<p>5. <strong>Install virtualenvwrapper-win</strong></p>
+<p>You may start to be seeing a pattern here with installation using <strong>pip</strong>:</p>
+<pre class="codehilite"><code class="language-bash">pip install virtualenvwrapper-win</code></pre>
+
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you prefer to use a more robust command line interface like Windows PowerShell, note that the package <strong>virtualenvwrapper-win</strong> won't work; try something like <strong>virtualenvwrapper-powershell</strong> instead.</p>
+</div>
+<p>This wrapper just adds commands for easier interaction with <strong>virtualenv</strong>. For example: Instead of having to navigate to an environment's "Scripts" folder and <code>activate</code> it, typing <code>workon &lt;virtual environment&gt;</code> wherever you're navigated in the system achieves the same effect.</p>
+<hr />
+<p><strong>Other ways into Python on Windows</strong></p>
+<p>In recent years IRE has been teaching Python in PC labs, and the easiest way to get everyone set up quickly has been to use the <a href="http://continuum.io/downloads">Anaconda distribution of Python</a>, which comes with many popular nonstandard libraries already installed alongside the core program.</p>
+<p>This remains an option available to you; it comes with <strong>pip</strong> and has its own method of segregating projects into virtual environments.</p>
+<hr />
+<h2 id="on-os-x">On OS X</h2>
+<p>Python comes pre-installed on OS X, which actually makes the process of getting set up properly more difficult.</p>
+<p>Yes, more difficult.</p>
+<p>The version accompanying OS X has been tinkered with by Apple, and it's responsible for other functionality on your computer. It's also likely out of date.</p>
+<p>The accepted way to get around this problem is </p>
+<h2 id="getting-coding-for-journalists">Getting "Coding for Journalists"</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../next_steps/" class="btn btn-neutral" title="Next steps"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../next_steps/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scraping the web - Coding for Journalists</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Scraping the web";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Coding for Journalists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Main</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task1/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Scraping the web</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#295web_scrape">2_web_scrape</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task3/">Parsing text</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task4/">Making functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../task5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Setting up your computer</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Coding for Journalists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Scraping the web</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ireapps/coding-for-journalists/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="295web_scrape">2_web_scrape</h1>
+<p>Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a> to varying degrees and in different combinations to create longer scripts.</p>
+<p>So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's <a href="http://www.nrc.gov/reactors/operating/list-power-reactor-units.html">list of domestic power reactor units</a>.</p>
+<p>Python comes with a library installed that's designed specifically for reading and writing CSV files (<a href="https://docs.python.org/2/library/csv.html"><code>csv</code></a>), but we're also going to need to extend Python's functionality a bit by bringing in two other libraries.</p>
+<p>One is <a href="http://docs.python-requests.org/en/latest/"><code>requests</code></a> -- it handles the job of playing a web browser that can fetch a web page and send back the underlying HTML. The other is <a href="http://www.crummy.com/software/BeautifulSoup/"><code>BeautifulSoup</code></a>, which parses the HTML into what amounts to a series of lists that we can then search, navigate and extract data from.</p>
+<p>When we get to part two, we'll use the built-in regular expressions library <a href="https://docs.python.org/2/library/re.html"><code>re</code></a> to isolate some text from the detail pages and <a href="https://docs.python.org/2/library/time.html"><code>time</code></a> to keep us from swamping a government site with too many requests at once.</p>
+<p>A big thank you to <a href="https://twitter.com/anthonydb">Anthony DeBarros</a> for allowing us to present a modified version of his web scraping example from <a href="https://github.com/anthonydb/python-get-started">python-get-started</a>.</p>
+<p>This exercise contains six files:</p>
+<ul>
+<li>
+<p><strong>scrape.py</strong>: The file we'll use to write our scraping script, following the comments.</p>
+</li>
+<li>
+<p><strong>scrape_pt2.py</strong>: The file we'll use to push our scraping script further; it contains finished code for <strong>scrape.py</strong> and open spots to add code that loops through to detail pages and collects additional information.</p>
+</li>
+<li>
+<p><strong>nrc_backup.html</strong>: A backup version of the main table we want to scrape in case there's a connection problem.</p>
+</li>
+<li>
+<p><strong>table_example.html</strong>: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.</p>
+</li>
+<li>
+<p><strong>scrape_done.py</strong>: A completed and working version of <strong>scrape.py</strong>.</p>
+</li>
+<li>
+<p><strong>scrape_pt2_done.py</strong>: A completed and working version of <strong>scrape_pt2.py</strong>. </p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../task3/" class="btn btn-neutral float-right" title="Parsing text"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../task1/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../task1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../task3/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

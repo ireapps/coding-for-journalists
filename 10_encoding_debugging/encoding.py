@@ -1,0 +1,8 @@
+#
+#
+#
+
+# 1. DECODE EARLY
+# 2. DO YOUR STUFF
+# 3. ENCODE LATE
+

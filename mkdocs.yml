@@ -1,0 +1,22 @@
+site_name: Coding for Journalists
+site_description: A class to familiarize reporters with basic programming.
+site_author: Alex Richards
+
+repo_url: https://github.com/ireapps/coding-for-journalists/
+
+pages:
+- Main: index.md
+- Getting started: task1.md
+- Scraping the web: task2.md
+- Parsing text: task3.md
+- Making functions: task4.md
+- Geocoding addresses: task5.md
+- Next steps: next_steps.md
+- Setting up your computer: install.md
+theme: readthedocs
+
+markdown_extensions:
+    - admonition
+    - codehilite
+    
+copyright: ©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a>
