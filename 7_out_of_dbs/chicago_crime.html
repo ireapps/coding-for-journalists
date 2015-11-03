@@ -22,8 +22,8 @@ tiles from OpenStreetMap.
 	-->
 	
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-	<script src="w_rate.geojson" type="text/javascript"></script>
-	<script src="test.geojson" type="text/javascript"></script>
+	<script src="comm_area_plusrate.geojson" type="text/javascript"></script>
+	<script src="homicide.geojson" type="text/javascript"></script>
 	<script>
 		
 		// Create a map centered on coordinates and zoomed to a specific level
@@ -33,6 +33,11 @@ tiles from OpenStreetMap.
 		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 18,
 			attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		
+		// Adds our generated homicide locations for the week.
+		L.geoJson(homicide_points, {
+    		onEachFeature: onEachFeature
 		}).addTo(map);
 		
 		// This function makes a popup for our community map.
@@ -64,13 +69,9 @@ tiles from OpenStreetMap.
 				fillOpacity: 0.7
 			}
 		}
-    	// Get our GeoJSON from a variable declared in ca.geojson
+    	// Get our GeoJSON from a variable declared in comm_area_plusrate.geojson
 		L.geoJson(comm, {
 			style: styleCA,
-    		onEachFeature: onEachFeature
-		}).addTo(map);
-		
-		L.geoJson(test, {
     		onEachFeature: onEachFeature
 		}).addTo(map);
 
