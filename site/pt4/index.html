@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Next steps - Coding for Journalists</title>
+  <title>Making a function - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Next steps";
+    var mkdocs_page_name = "Making a function";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -85,8 +85,15 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../pt4/">Making a function</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Making a function</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#495make_function">4_make_function</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -134,18 +141,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Next steps</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#next-steps">Next Steps</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#version-control">Version control</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
         
     </li>
 <li>
@@ -172,7 +169,7 @@
     
       
     
-    <li>Next steps</li>
+    <li>Making a function</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -186,25 +183,14 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="next-steps">Next Steps</h3>
-<p>If you're curious about the different paths for installing Python and various libraries on your own computer, some excellent resources exist as part of the <a href="https://github.com/ireapps/pycar/">PyCAR</a> repository. The <a href="https://github.com/ireapps/pycar/blob/master/takehome/README.md">take-home portion</a> points to several tutorials and guides that cover Mac and PC setup, how to compartmentalize projects in their own virtual environments and the use of version control.</p>
-<p>If you want to use a virtualenv, we've included a (short) requirements file for <code>pip</code> with all the non-standard libraries used and their dependencies.</p>
-<p>Here are stops to make as you expand your knowledge and keep practicing these news skills:</p>
-<ul>
-<li>Again, the <a href="https://github.com/ireapps/pycar/">PyCAR</a> repository, a daylong class taught at the 2014 and 2015 NICAR Conferences.</li>
-<li>Anthony Debarros' <a href="https://github.com/anthonydb/python-get-started">python-get-started</a> repository and his useful <a href="https://github.com/anthonydb/python-snippets">python-snippets</a>, a list of practical code examples.</li>
-<li>Ben Welsh's updated guide to building <a href="https://github.com/ireapps/first-web-scraper">a web scraper in Python</a> and his guide for building <a href="https://github.com/ireapps/first-news-app">a lightweight news app</a>.</li>
-<li><a href="http://learnpython.org">LearnPython</a> is an interactive tutorial that covers a lot of this same ground and more.</li>
-</ul>
-<h3 id="version-control">Version control</h3>
-<p>As you start feeling more comfortable with the basics, you may want to start using a version control setup like <a href="https://git-scm.com/">git</a> to catalog your scripts, collaborate with others and share your code with the world.</p>
-<p>Here are a couple of guides from NICAR presenters and other sources that may come in handy:</p>
-<ul>
-<li>Tom Meagher's <a href="http://ire.org/resource-center/tipsheets/3863/">tipsheet on git and GitHub</a></li>
-<li><a href="https://github.com/githubteacher/nicar-2015">Resources and code shared during NICAR15</a> from the fine folks at GitHub </li>
-<li>Lauren Orsini's <a href="http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oAh764aNbWfqyH">guide for beginners</a></li>
-<li>GitHub's own <a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">command cheat sheet</a></li>
-</ul>
+                <h1 id="495make_function">4_make_function</h1>
+<p>This is a pretty quick task -- the next time we have to deal with a list from the same agency, we shouldn't have to spend time rewriting our code from scratch or even go back to revise it to handle a new file. We have something that works, so let's turn it into a function we can call whenever we need to parse addresses for a list of financial licensees.</p>
+<p>This exercise contains five files:</p>
+<p><strong>payday_parser.py</strong>: Our parser from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses">3_parse_addresses</a>. We'll turn the existing work into a function and generalize it a bit to handle a file that's not specifically the list of licensed payday lenders.</p>
+<p><strong>consumer_installment.html</strong>: Another listing from the state of Illinois, but this time it encompasses more than 1,000 licensed consumer installment lenders.</p>
+<p><strong>call_function.py</strong>: A script we'll write to call the parser function from <strong>payday_parser.py</strong> and direct it toward our HTML file.</p>
+<p><strong>payday_parser_done.py</strong>: A completed and working version of <strong>payday_parser.py</strong>.</p>
+<p><strong>call_function_done.py</strong>: A completed and working version of <strong>call_function.py</strong>.</p>
               
             </div>
           </div>
@@ -212,8 +198,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../pt5/" class="btn btn-neutral float-right" title="Geocoding addresses"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../pt10/" class="btn btn-neutral" title="Text encoding and debugging"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../pt3/" class="btn btn-neutral" title="Parsing text across lines"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -243,8 +231,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../pt10/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../pt3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../pt5/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

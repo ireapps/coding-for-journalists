@@ -1,6 +1,6 @@
-# 2\_web_scrape
+### Scraping the web
 
-Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from [1_start](https://github.com/richardsalex/coding_for_journos/tree/master/1_start) to varying degrees and in different combinations to create longer scripts.
+Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from [the intro](pt1.md) to varying degrees and in different combinations to create longer scripts.
 
 So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's [list of domestic power reactor units](http://www.nrc.gov/reactors/operating/list-power-reactor-units.html).
 
@@ -12,7 +12,7 @@ When we get to part two, we'll use the built-in regular expressions library [```
 
 A big thank you to [Anthony DeBarros](https://twitter.com/anthonydb) for allowing us to present a modified version of his web scraping example from [python-get-started](https://github.com/anthonydb/python-get-started).
 
-This exercise contains six files:
+We'll use the following files:
 
 - **scrape.py**: The file we'll use to write our scraping script, following the comments.
 
@@ -21,6 +21,11 @@ This exercise contains six files:
 - **nrc_backup.html**: A backup version of the main table we want to scrape in case there's a connection problem.
 
 - **table_example.html**: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.
-- **scrape_done.py**: A completed and working version of **scrape.py**.
- 
-- **scrape\_pt2\_done.py**: A completed and working version of **scrape_pt2.py**. 
+
+- **fun_with_bs.py**: A primer for some of BeautifulSoup's most relevant commands for navigating HTML.
+
+- **fun_with_csv.py**: A brief example of how Python uses its standard csv library to read and write delimited-text files.
+
+- **fun_with_regex.py**: A file that covers some regular expresses in Python for finding and isolating text.
+
+Finished versions will appear in the **completed** folder.

@@ -57,48 +57,6 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task1/">Getting started</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task2/">Scraping the web</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task3/">Parsing text</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task4/">Making functions</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../task5/">Geocoding addresses</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../next_steps/">Next steps</a>
-        
-    </li>
-<li>
-          
-            <li>
     <li class="toctree-l1 current">
         <a class="current" href="./">Setting up your computer</a>
         
@@ -113,10 +71,90 @@
                 <li class="toctree-l3"><a href="#on-os-x">On OS X</a></li>
                 
             
+                <li class="toctree-l3"><a href="#test-run">Test run</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#getting-coding-for-journalists">Getting "Coding for Journalists"</a></li>
                 
             
             </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt1/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt2/">Scraping the web</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt3/">Parsing text across lines</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt4/">Making a function</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt6/">APIs and databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt7/">Unlocking data from databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt8/">Cleaning data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt9/">Other scrapes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt10/">Text encoding and debugging</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
         
     </li>
 <li>
@@ -196,8 +234,12 @@
 <pre class="codehilite"><code class="language-bash">python --version</code></pre>
 
 
-<p>If everything went as planned, this should spit out the version number of Python you just installed. If you get an error message that reads something like <code>'python' is not recognized as an internal or external command, operable program or batch file</code> things have gone badly awry; Python may not have been added to your command prompt PATH, or you'll need to attempt to reinstall.</p>
-<p>If all is well with Python, let's check on <strong>pip</strong>:</p>
+<p>If everything went as planned, this should spit out the version number of Python you just installed. </p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you get an error message that says Python isn't recognized as a legitimate command, something's gone awry. Python may not have been added to your command prompt PATH, which you can resolve by following step 3 in <a href="http://www.anthonydebarros.com/2014/02/16/setting-up-python-in-windows-8-1/">this guide</a>. If the main Python directory, its Scripts folder and site-packages are all in the PATH, you'll need to attempt to reinstall.</p>
+</div>
+<p>Once we've verified all is well with Python, let's turn our attention to <strong>pip</strong>:</p>
 <pre class="codehilite"><code class="language-bash">pip list</code></pre>
 
 
@@ -232,6 +274,14 @@ setuptools (16.0)</code></pre>
 <p>If you prefer to use a more robust command line interface like Windows PowerShell, note that the package <strong>virtualenvwrapper-win</strong> won't work; try something like <strong>virtualenvwrapper-powershell</strong> instead.</p>
 </div>
 <p>This wrapper just adds commands for easier interaction with <strong>virtualenv</strong>. For example: Instead of having to navigate to an environment's "Scripts" folder and <code>activate</code> it, typing <code>workon &lt;virtual environment&gt;</code> wherever you're navigated in the system achieves the same effect.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Tcl</strong> and <strong>tk</strong> come with Python 2.7 and don't appear to automatically work inside of Windows virtualenvs; this will derail things like <code>%paste</code> in iPython. You'll need to navigate to the virtualenv's folder and modify the <code>activate.bat</code> script by adding the following lines (with the paths to your installation of Python — defaults below): </p>
+</div>
+<pre class="codehilite"><code class="language-bash">set &quot;TCL_LIBRARY=C:\Python27\tcl\tcl8.5&quot;
+set &quot;TK_LIBRARY=C:\Python27\tcl\tk8.5&quot;</code></pre>
+
+
 <hr />
 <p><strong>Other ways into Python on Windows</strong></p>
 <p>In recent years IRE has been teaching Python in PC labs, and the easiest way to get everyone set up quickly has been to use the <a href="http://continuum.io/downloads">Anaconda distribution of Python</a>, which comes with many popular nonstandard libraries already installed alongside the core program.</p>
@@ -241,8 +291,97 @@ setuptools (16.0)</code></pre>
 <p>Python comes pre-installed on OS X, which actually makes the process of getting set up properly more difficult.</p>
 <p>Yes, more difficult.</p>
 <p>The version accompanying OS X has been tinkered with by Apple, and it's responsible for other functionality on your computer. It's also likely out of date.</p>
-<p>The accepted way to get around this problem is </p>
+<p>The accepted way to get around this problem is to install an OS X program called <a href="http://brew.sh/">Homebrew</a>, which is essentially a package manager for your system — similar to what pip does for Python. It will allow you to download an independent and updateable version of Python that you can use going forward. A side benefit is that pip comes with the Python you install with Homebrew.</p>
+<p>Not to evangelize about Homebrew too much, but if you decide to travel down the path leading to some of the more complex data journalism techniques on the command line, you'll find other uses for Homebrew and its many packages beyond just providing a clean copy of Python.</p>
+<p>It has downsides; Homebrew requires a current version of Apple's Xcode's command line tools to be installed on your computer first. A full guide is <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md">available here</a> to get you up and running.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Changes in OS X 10.11 El Capitan can make this process even trickier. Apple insituted extra system protections that have the capability of adding a few steps to the Homebrew install process. If you're running into these issues, <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md">read this</a> for more information.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also use the built-in OS X Python if you wish. The next step in that case will be getting pip up and running.</p>
+</div>
+<p>1. <strong>Check for pip</strong></p>
+<p>Homebrew's Python comes with pip in tow. If you're using the OS X system version, let's see if it's installed. Open the Terminal and type the following:</p>
+<pre class="codehilite"><code class="language-bash">pip -V</code></pre>
+
+
+<p>If pip is installed, this will return a version number.</p>
+<hr />
+<p>2. <strong>If it's not there: Get pip</strong></p>
+<p>Download <a href="https://bootstrap.pypa.io/get-pip.py"><code>get-pip.py</code></a>, navigate to it and type the following:</p>
+<pre class="codehilite"><code class="language-bash">python get-pip.py</code></pre>
+
+
+<p>For more information on installing pip, there's a <a href="http://pip.readthedocs.org/en/stable/installing/">walkthrough</a> as a part of its online documentation.</p>
+<hr />
+<p>3. <strong>Verify the presence of Python and pip</strong></p>
+<p>Let's see what we're working with here and check to make sure all is well:</p>
+<pre class="codehilite"><code class="language-bash">python -V
+pip -V</code></pre>
+
+
+<hr />
+<p>4. <strong>Get and install virtualenv</strong></p>
+<p>With <strong>pip</strong>, adding the <strong>virtualenv</strong> package is as easy as typing:</p>
+<pre class="codehilite"><code class="language-bash">pip install virtualenv</code></pre>
+
+
+<p>It should appear among pip and setuptools when you type <code>pip list</code> and you should be able to verify the version with:</p>
+<pre class="codehilite"><code class="language-bash">virtualenv --version</code></pre>
+
+
+<hr />
+<p>5. <strong>Get and install virtualenvwrapper</strong></p>
+<p>We can install virtualenvwrapper with <strong>pip</strong> as well:</p>
+<pre class="codehilite"><code class="language-bash">pip install virtualenvwrapper</code></pre>
+
+
+<p>This wrapper just adds commands for easier interaction with <strong>virtualenv</strong>. For example: Instead of having to navigate to an environment's "Scripts" folder and <code>activate</code> it, typing <code>workon &lt;virtual environment&gt;</code> wherever you're navigated in the system achieves the same effect.</p>
+<hr />
+<p>6. <strong>Modify your .bash_profile so you can use virtualenvwrapper commands and give your virtualenvs a home</strong></p>
+<p>This can be accomplished by opening your .bash_profile, which is typically in your main user directory. Typing:</p>
+<pre class="codehilite"><code class="language-bash">open -e ~/.bash_profile</code></pre>
+
+
+<p>Opens the file in your system's default text editor — probably TextEdit.</p>
+<p>If you get an error saying that the file doesn't exist, create one and then try opening it again.</p>
+<pre class="codehilite"><code class="language-bash">touch ~/.bash_profile
+open -e ~/.bash_profile</code></pre>
+
+
+<hr />
+<p>7. <strong>Reload your .bash_profile</strong></p>
+<p>So that these new changes take effect, type:</p>
+<pre class="codehilite"><code class="language-bash">source ~/.bash_profile</code></pre>
+
+
+<hr />
+<h2 id="test-run">Test run</h2>
+<pre class="codehilite"><code class="language-bash">mkvirtualenv mytest
+deactivate
+workon
+workon mytest
+pip list mytest</code></pre>
+
+
+<hr />
 <h2 id="getting-coding-for-journalists">Getting "Coding for Journalists"</h2>
+<p>A repository for all of the files is presently hosted on GitHub, which is likely how you navigated here in the first place. You can just <a href="https://github.com/ireapps/coding-for-journalists/archive/master.zip">copy a zipped version</a> of all the files for your use or fork it using GitHub's desktop application or git from the command line. For help with git and GitHub, there are some <a href="../next_steps/">resources in "Next Steps."</a></p>
+<p>Once you have the files, you'll need to set up a virtualenv told hold the required libraries.</p>
+<pre class="codehilite"><code class="language-bash">mkvirtualenv cfj</code></pre>
+
+
+<p>You should automatically be placed inside the new virtualenv after creation. From there, the <code>requirements.txt</code> file within the main folder lists every necessary library to make these scripts run.</p>
+<pre class="codehilite"><code class="language-bash">pip install -r requirements.txt</code></pre>
+
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>One requirement isn't designed for Windows, so there is a separate file <code>requirements-win.txt</code> that should be used instead.</p>
+</div>
+<p>Once that's done, you'll have non-standard Python libraries and add-ons like <strong>geopy</strong>, <strong>iPython</strong> and <strong>requests</strong> at your disposal.  </p>
               
             </div>
           </div>
@@ -250,8 +389,10 @@ setuptools (16.0)</code></pre>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../pt1/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../next_steps/" class="btn btn-neutral" title="Next steps"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href=".." class="btn btn-neutral" title="Main"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +402,7 @@ setuptools (16.0)</code></pre>
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+      <p>©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -281,8 +422,10 @@ setuptools (16.0)</code></pre>
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../next_steps/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../pt1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

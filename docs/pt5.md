@@ -1,4 +1,4 @@
-# 5_geocode
+### Geocoding addresses
 
 For any kind of analysis that involves mapping, having coordinates is a must. En masse, though, they aren't always easy to come by.
 
@@ -16,10 +16,10 @@ We'll be using the CSV file we made by parsing payday lender addresses from 3\_p
 
 Google's free geocoder can only handle five requests per second, so we're going to use Python's time functions to slow our requests down and set up a control flow so that we're all only geocoding the first five addresses -- a condition that can be removed at your discretion if you're working through this task on your own later.
 
-This exercise contains three files:
+The files we'll be working with:
 
 - **geocode.py**: A script we'll write to pass addresses through Google's geocoding service. It will take the results along with our initial data fields and send them all to a new CSV file.
 
 - **payday_lenders.csv**: Our completed CSV file from 3\_parse\_addresses.
 
-- **geocode_done.py**: A completed and working version of **geocode.py**.
+A finished version is in **completed**.

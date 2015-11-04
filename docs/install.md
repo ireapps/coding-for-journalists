@@ -110,6 +110,12 @@ pip install virtualenvwrapper-win
 	
 This wrapper just adds commands for easier interaction with **virtualenv**. For example: Instead of having to navigate to an environment's "Scripts" folder and ```activate``` it, typing ```workon <virtual environment>``` wherever you're navigated in the system achieves the same effect.
 
+!!! caution
+	**Tcl** and **tk** come with Python 2.7 and don't appear to automatically work inside of Windows virtualenvs; this will derail things like ```%paste``` in iPython. You'll need to navigate to the virtualenv's folder and modify the ```activate.bat``` script by adding the following lines (with the paths to your installation of Python — defaults below): 
+```bash
+set "TCL_LIBRARY=C:\Python27\tcl\tcl8.5"
+set "TK_LIBRARY=C:\Python27\tcl\tk8.5"
+``` 
 
 ---
 
@@ -129,12 +135,129 @@ Yes, more difficult.
 
 The version accompanying OS X has been tinkered with by Apple, and it's responsible for other functionality on your computer. It's also likely out of date.
 
-The accepted way to get around this problem is to install an OS X program called [Homebrew](http://brew.sh/), which is essentially a package manager for your system -- similar to what pip does for Python. It will allow you to download an independent and updateable version of Python that you can use going forward. A side benefit is that pip comes with the Python you install with Homebrew.
+The accepted way to get around this problem is to install an OS X program called [Homebrew](http://brew.sh/), which is essentially a package manager for your system — similar to what pip does for Python. It will allow you to download an independent and updateable version of Python that you can use going forward. A side benefit is that pip comes with the Python you install with Homebrew.
 
 Not to evangelize about Homebrew too much, but if you decide to travel down the path leading to some of the more complex data journalism techniques on the command line, you'll find other uses for Homebrew and its many packages beyond just providing a clean copy of Python.
 
+It has downsides; Homebrew requires a current version of Apple's Xcode's command line tools to be installed on your computer first. A full guide is [available here](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md) to get you up and running.
+
+!!! caution
+	Changes in OS X 10.11 El Capitan can make this process even trickier. Apple insituted extra system protections that have the capability of adding a few steps to the Homebrew install process. If you're running into these issues, [read this](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md) for more information.
+
 !!! note
-	You can also use the built-in OS X Python if you wish. The next step in that case will be getting pip up and running. 
+	You can also use the built-in OS X Python if you wish. The next step in that case will be getting pip up and running.
+	
+1\. **Check for pip**
+
+Homebrew's Python comes with pip in tow. If you're using the OS X system version, let's see if it's installed. Open the Terminal and type the following:
+```bash
+pip -V
+```
+If pip is installed, this will return a version number.
+
+----
+	
+2\. **If it's not there: Get pip**
+
+Download [```get-pip.py```](https://bootstrap.pypa.io/get-pip.py), navigate to it and type the following:
+```bash
+python get-pip.py
+```
+For more information on installing pip, there's a [walkthrough](http://pip.readthedocs.org/en/stable/installing/) as a part of its online documentation.
+
+----
+
+3\. **Verify the presence of Python and pip**
+
+Let's see what we're working with here and check to make sure all is well:
+```bash
+python -V
+pip -V
+```
+
+----
+
+4\. **Get and install virtualenv**
+
+With **pip**, adding the **virtualenv** package is as easy as typing:
+
+```bash
+pip install virtualenv
+```
+
+It should appear among pip and setuptools when you type ```pip list``` and you should be able to verify the version with:
+
+```bash
+virtualenv --version
+```
+
+
+----
+
+5\. **Get and install virtualenvwrapper**
+
+We can install virtualenvwrapper with **pip** as well:
+
+```bash
+pip install virtualenvwrapper
+```
+	
+This wrapper just adds commands for easier interaction with **virtualenv**. For example: Instead of having to navigate to an environment's "Scripts" folder and ```activate``` it, typing ```workon <virtual environment>``` wherever you're navigated in the system achieves the same effect.
+
+----
+
+6\. **Modify your .bash_profile so you can use virtualenvwrapper commands and give your virtualenvs a home**
+
+This can be accomplished by opening your .bash_profile, which is typically in your main user directory. Typing:
+```bash
+open -e ~/.bash_profile
+```
+Opens the file in your system's default text editor — probably TextEdit.
+
+If you get an error saying that the file doesn't exist, create one and then try opening it again.
+```bash
+touch ~/.bash_profile
+open -e ~/.bash_profile
+```
+
+----
+
+7\. **Reload your .bash_profile**
+
+So that these new changes take effect, type:
+```bash
+source ~/.bash_profile
+```
+
+----
+
+## Test run
+
+```bash
+mkvirtualenv mytest
+deactivate
+workon
+workon mytest
+pip list mytest
+```
+----
 
 ## Getting "Coding for Journalists"
 
+A repository for all of the files is presently hosted on GitHub, which is likely how you navigated here in the first place. You can just [copy a zipped version](https://github.com/ireapps/coding-for-journalists/archive/master.zip) of all the files for your use or fork it using GitHub's desktop application or git from the command line. For help with git and GitHub, there are some [resources in "Next Steps."](next_steps.md)
+
+Once you have the files, you'll need to set up a virtualenv told hold the required libraries.
+
+```bash
+mkvirtualenv cfj
+```
+
+You should automatically be placed inside the new virtualenv after creation. From there, the ```requirements.txt``` file within the main folder lists every necessary library to make these scripts run.
+
+```bash
+pip install -r requirements.txt
+```
+!!! caution
+	One requirement isn't designed for Windows, so there is a separate file ```requirements-win.txt``` that should be used instead.
+
+Once that's done, you'll have non-standard Python libraries and add-ons like **geopy**, **iPython** and **requests** at your disposal.  

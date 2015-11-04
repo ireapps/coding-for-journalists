@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Parsing text - Coding for Journalists</title>
+  <title>Unlocking data from databases - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Parsing text";
+    var mkdocs_page_name = "Unlocking data from databases";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -58,26 +58,58 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task1/">Getting started</a>
+        <a class="" href="../install/">Setting up your computer</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task2/">Scraping the web</a>
+        <a class="" href="../pt1/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt2/">Scraping the web</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt3/">Parsing text across lines</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt4/">Making a function</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt6/">APIs and databases</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 current">
-        <a class="current" href="./">Parsing text</a>
+        <a class="current" href="./">Unlocking data from databases</a>
         
             <ul>
-            
-                <li class="toctree-l3"><a href="#395parse_addresses">3_parse_addresses</a></li>
-                
             
             </ul>
         
@@ -86,14 +118,21 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task4/">Making functions</a>
+        <a class="" href="../pt8/">Cleaning data</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task5/">Geocoding addresses</a>
+        <a class="" href="../pt9/">Other scrapes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt10/">Text encoding and debugging</a>
         
     </li>
 <li>
@@ -101,13 +140,6 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../next_steps/">Next steps</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../install/">Setting up your computer</a>
         
     </li>
 <li>
@@ -134,7 +166,7 @@
     
       
     
-    <li>Parsing text</li>
+    <li>Unlocking data from databases</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -148,22 +180,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="395parse_addresses">3_parse_addresses</h1>
-<p>It would be great if every piece of data you came across was in a format that lent itself to easy capture. In the same vein as the text extraction from reactor detail pages in our last example, we're going to pick apart an HTML file of licensed payday lenders (that's mostly text) and turn it into a flat CSV file where one row is one record.</p>
-<p>In this file, addresses can span three, four or five lines. Sometimes it's on four lines because a lender does business in Illinois under another name; in others, it's because the lender operates out of a suite, room or building stored on a line separate from the street address. This means that our script needs to behave four different ways depending on how many lines it encounters for each address, and we'll switch among those behaviors with <code>if/elif</code> syntax.</p>
-<p>We'll again use <code>BeautifulSoup</code>, but primarily to break out the portion of the file we want to capture for the resulting CSV.</p>
-<p>This exercise has three files:</p>
-<ul>
-<li>
-<p><strong>payday.py</strong>: The file we'll use to write our address parser, following the comments.</p>
-</li>
-<li>
-<p><strong>payday_lenders.html</strong>: A simple HTML file that lists nearly 500 payday lenders licensed to do business in Illinois. Their addresses are split across multiple lines.</p>
-</li>
-<li>
-<p><strong>payday_done.py</strong>: A completed and working version of <strong>payday.py</strong>.</p>
-</li>
-</ul>
+                
               
             </div>
           </div>
@@ -171,10 +188,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../task4/" class="btn btn-neutral float-right" title="Making functions"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../pt8/" class="btn btn-neutral float-right" title="Cleaning data"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../task2/" class="btn btn-neutral" title="Scraping the web"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pt6/" class="btn btn-neutral" title="APIs and databases"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -184,7 +201,7 @@
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+      <p>©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -204,10 +221,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../task2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../pt6/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../task4/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../pt8/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

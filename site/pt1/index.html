@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started - Coding for Journalists</title>
+  <title>Introduction - Coding for Journalists</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Getting started";
+    var mkdocs_page_name = "Introduction";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -57,12 +57,19 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Setting up your computer</a>
+        
+    </li>
+<li>
+          
+            <li>
     <li class="toctree-l1 current">
-        <a class="current" href="./">Getting started</a>
+        <a class="current" href="./">Introduction</a>
         
             <ul>
             
-                <li class="toctree-l3"><a href="#1_start">1_start</a></li>
+                <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
                 
             
             </ul>
@@ -72,28 +79,63 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task2/">Scraping the web</a>
+        <a class="" href="../pt2/">Scraping the web</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task3/">Parsing text</a>
+        <a class="" href="../pt3/">Parsing text across lines</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task4/">Making functions</a>
+        <a class="" href="../pt4/">Making a function</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../task5/">Geocoding addresses</a>
+        <a class="" href="../pt5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt6/">APIs and databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt7/">Unlocking data from databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt8/">Cleaning data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt9/">Other scrapes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt10/">Text encoding and debugging</a>
         
     </li>
 <li>
@@ -101,13 +143,6 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../next_steps/">Next steps</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../install/">Setting up your computer</a>
         
     </li>
 <li>
@@ -134,7 +169,7 @@
     
       
     
-    <li>Getting started</li>
+    <li>Introduction</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -148,11 +183,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="1_start">1_start</h1>
+                <h4 id="introduction">Introduction</h4>
+<p>Before we do anything, we need to understand some of the components we'll be interacting with and switching between.</p>
+<ul>
+<li>
+<p><strong>The Python interpreter</strong>: we input commands, define variables and functions, write loops, etc. The interpreter parses it all for us, line by line as we write them, and takes action.</p>
+</li>
+<li>
+<p><strong>Text editor</strong>: this is where we essentially chain a bunch of commands together within a single document and save it as a Python script (ending in <em>.py</em>).</p>
+</li>
+<li>
+<p><strong>The command line</strong>: Accessed via "Terminal" on OS X or "cmd.exe" (or possibly PowerShell) on Windows. It's where we run the Python interpreter, among other programs, and issue commands that allow us to navigate our computer's folders.</p>
+</li>
+</ul>
+<p>That's pretty much it. These three pieces give you a container for code you're writing, the program to run it and a method to get it all running. We'll be doing some switching back and forth between entering code directly into the interpreter we run from the command line and the text editor.</p>
+<p>As we progress, we'll be dealing with two other things.</p>
+<ul>
+<li>
+<p><strong>External libraries</strong>: Python comes with a standard library that has a ton of useful stuff. Developers have written libraries that take this functionality even further. By importing parts of these libraries into our Python script, we can do complex things, like fetch a web page, with a single line of code.</p>
+</li>
+<li>
+<p><strong>A virtual enviroment</strong>: The bubble where all of our code lives.</p>
+</li>
+</ul>
 <p>This is a crash course in some of Python's major data types and and how to tame them. We'll be doing things like mashing strings together, running through items in a list and defining very simple functions.</p>
 <p>We'll be using iPython's interactive interpreter, which means we have access to a few extra features (which iPython modestly calls <em>magic functions</em>).</p>
-<p>But first we have to fetch all these files. Using git and GitHub is a little bit outside the scope of this class (at the moment), so we'll download a <a href="https://github.com/richardsalex/coding_for_journos/archive/master.zip">zipped copy of the repo</a>, unzip it, and navigate to it using PowerShell.</p>
-<p>This exercise has three files:</p>
+<p>The files in this folder:</p>
 <ul>
 <li>
 <p><strong>var.py</strong>: A Python script with some variables of different types like integers, lists and dictionaries.</p>
@@ -161,9 +217,13 @@
 <p><strong>exercises.py</strong>: A file that gives a list of exercises in the form of comments; guidance on how to manipulate the variables in <strong>var.py</strong>. It's also the place we can write code to save for future reference. Nearly everything we do in this task will use iPython.</p>
 </li>
 <li>
-<p><strong>exercises_done.py</strong>: Same as above, but with all the code filled in.</p>
+<p><strong>fun_with_subs.py</strong>: A file for practicing string substitutions, which is something we'll be doing frequently. It covers the depreciated method you'll encounter frequently and covers <code>str.format()</code>.</p>
+</li>
+<li>
+<p><strong>whitespace.py</strong>: A guide to how Python decides which blocks of code to run when; it's all controlled by indentation.</p>
 </li>
 </ul>
+<p>Any finished versions will appear in the <strong>completed</strong> folder.</p>
 <p>Opening iPython is as easy as typing <code>ipython</code> into PowerShell.</p>
 <p>To get everything from <strong>var.py</strong> queued up, we can either run it from within iPython using one of the <em>magic functions</em>:</p>
 <pre class="codehilite"><code>%run var.py</code></pre>
@@ -199,10 +259,10 @@ for gift in presents:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../task2/" class="btn btn-neutral float-right" title="Scraping the web"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../pt2/" class="btn btn-neutral float-right" title="Scraping the web"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Main"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../install/" class="btn btn-neutral" title="Setting up your computer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -212,7 +272,7 @@ for gift in presents:
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+      <p>©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -232,10 +292,10 @@ for gift in presents:
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../install/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../task2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../pt2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

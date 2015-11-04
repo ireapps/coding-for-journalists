@@ -78,6 +78,7 @@ for url in pdf_urls_dict:
     loc_name = url.replace(' ', '')
     pdf_name = pdf.split('/')[-1].replace('%20', '')
     file_name = '{0}-{1}'.format(loc_name, pdf_name)
+    # Make a directory to hold these files
     directory = './pdfs/'
     with open(directory+file_name, 'wb') as outfile:
         outfile.write(file.content)

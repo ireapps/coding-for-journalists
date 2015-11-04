@@ -20,7 +20,7 @@ url = 'http://www.nrc.gov/reactors/operating/list-power-reactor-units.html'
 # object.
 web_page = requests.get(url)
 web_page.encoding = 'UTF-8'
-soup = BeautifulSoup(web_page.text)
+soup = BeautifulSoup(web_page.text, 'html.parser')
 
 # This page only has one table, so it's not much work to find it.
 reactor_table = soup.find('table')

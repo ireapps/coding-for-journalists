@@ -20,7 +20,7 @@ import json
 import collections
 
 # Connect to the crime.db we made earlier and grab all the homicide records.
-db_loc = '../from_apis/crime.db'
+db_loc = '../6_from_apis/crime.db'
 conn = sqlite3.connect(db_loc)
 c = conn.cursor()
 

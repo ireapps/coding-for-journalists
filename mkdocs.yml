@@ -6,13 +6,18 @@ repo_url: https://github.com/ireapps/coding-for-journalists/
 
 pages:
 - Main: index.md
-- Getting started: task1.md
-- Scraping the web: task2.md
-- Parsing text: task3.md
-- Making functions: task4.md
-- Geocoding addresses: task5.md
-- Next steps: next_steps.md
 - Setting up your computer: install.md
+- Introduction: pt1.md
+- Scraping the web: pt2.md
+- Parsing text across lines: pt3.md
+- Making a function: pt4.md
+- Geocoding addresses: pt5.md
+- APIs and databases: pt6.md
+- Unlocking data from databases: pt7.md
+- Cleaning data: pt8.md
+- Other scrapes: pt9.md
+- Text encoding and debugging: pt10.md
+- Next steps: next_steps.md
 theme: readthedocs
 
 markdown_extensions:

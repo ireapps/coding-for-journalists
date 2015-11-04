@@ -57,17 +57,7 @@
             
                 <li class="toctree-l3"><a href="#coding-for-journalists">Coding for Journalists</a></li>
                 
-                    <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
-                
-                    <li><a class="toctree-l4" href="#1_start">1_start</a></li>
-                
-                    <li><a class="toctree-l4" href="#295web_scrape">2_web_scrape</a></li>
-                
-                    <li><a class="toctree-l4" href="#395parse_addresses">3_parse_addresses</a></li>
-                
-                    <li><a class="toctree-l4" href="#495make_function">4_make_function</a></li>
-                
-                    <li><a class="toctree-l4" href="#595geocode">5_geocode</a></li>
+                    <li><a class="toctree-l4" href="#what-the-next-few-days-have-in-store">What the next few days have in store</a></li>
                 
             
             </ul>
@@ -77,35 +67,77 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="task1/">Getting started</a>
+        <a class="" href="install/">Setting up your computer</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="task2/">Scraping the web</a>
+        <a class="" href="pt1/">Introduction</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="task3/">Parsing text</a>
+        <a class="" href="pt2/">Scraping the web</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="task4/">Making functions</a>
+        <a class="" href="pt3/">Parsing text across lines</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="task5/">Geocoding addresses</a>
+        <a class="" href="pt4/">Making a function</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt6/">APIs and databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt7/">Unlocking data from databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt8/">Cleaning data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt9/">Other scrapes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pt10/">Text encoding and debugging</a>
         
     </li>
 <li>
@@ -113,13 +145,6 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="next_steps/">Next steps</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="install/">Setting up your computer</a>
         
     </li>
 <li>
@@ -161,8 +186,8 @@
             <div class="section">
               
                 <h1 id="coding-for-journalists">Coding for Journalists</h1>
-<p>This class is an evolving introduction to coding and the Python programming language for journalists. In addition to a tour of the fundamentals, it spans four basic projects to get you started.</p>
-<p>The first version of this course happened at the <a href="https://ire.org/conferences/ire-2015/">2015 IRE Conference in Philadelphia</a>; the repository and associated tasks have been updated throughout the summer.</p>
+<p>This class is an evolving introduction to coding and the Python programming language for journalists. In addition to a tour of the fundamentals, it spans nine basic projects to get you started.</p>
+<p>The <a href="https://github.com/ireapps/coding-for-journalists/tree/ire2015">first version</a> of this course happened at the <a href="https://ire.org/conferences/ire-2015/">2015 IRE Conference in Philadelphia</a>; the repository and associated tasks have been updated since.</p>
 <p>A few things to note before we get rolling:</p>
 <ul>
 <li>This guide and all documentation live at <a href="http://coding-for-journalists.rtfd.org">coding-for-journalists.rtfd.org</a></li>
@@ -170,23 +195,34 @@
 <li>A good place to raise issues with the code or ask specific questions about the code is <a href="https://github.com/ireapps/coding-for-journalists/issues">also on GitHub</a></li>
 <li><a href="mailto:alex@ire.org">Email</a> IRE Training Director Alex Richards, the primary author of this course, or <a href="http://www.twitter.com/alexrichards">contact him on Twitter</a></li>
 </ul>
-<p>Because of the pace of this class and limited amount of time available, we won't be able to easily accommodate attendees who prefer to use their own laptops during the session. </p>
-<p>Each task we'll tackle has (at least) two files: the one for writing code in and a version with "_done" appended to the name that's already been completed. Since there won't be enough time to get through every single one, you can circle back afterward, fetch these files from GitHub and work through the exercises on your own.</p>
-<h3 id="requirements">Requirements</h3>
-<p>This is designed for people who have some grounding in data journalism already and experience with spreadsheets and database managers. It's helpful if you understand Excel functions, for example, and some basic SQL.</p>
-<p>You will likely struggle if you don't know how to navigate the computer's command line, too; it involves moving between folders, running scripts and issuing commands to a Python interpreter.</p>
-<p>Here's what the next few hours have in store:</p>
-<h3 id="1_start"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a></h3>
-<p>A whirlwind tour of Python's data types, variables, basic functionality and loops. We'll run a script in the iPython interactive interpreter to load a variety of variables and then start messing with them.</p>
-<h3 id="295web_scrape"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/2_web_scrape">2_web_scrape</a></h3>
+<p>We have set aside time at the end of the workshop to work through the process of getting your home or work laptop set up with Python and a development environment. If you're looking for <a href="install/">a guide</a>, we've put one together that covers most of what you'll need for OS X and Windows.</p>
+<p>Each task we'll tackle and set of lessons has finished and working versions of the code in the "completed" folder; they typically have "_done" appended to the end of the filename. If there isn't enough time to hit each one during our time together, there's enough commenting in place that you should be able to work through them on your own (and feel free to bug <a href="mailto:alex@ire.org">Alex</a>).</p>
+<p>This is designed for people who have some grounding in data journalism already and experience with spreadsheets and database managers. It's helpful if you understand Excel functions, for example, and some basic SQL. Other important skills include navigation of the computer's command line; we'll bemoving between folders, running scripts and issuing commands to a Python interpreter.</p>
+<h2 id="what-the-next-few-days-have-in-store">What the next few days have in store</h2>
+<h4 id="introduction">Introduction</h4>
+<p>A whirlwind tour of Python's data types, variables, basic functionality and loops. We'll write a bunch of them on our own, discuss them, and then run a script in the iPython interactive interpreter to load a variety of variables and then start messing with them.</p>
+<p>We'll also talk about how to format strings — which we'll be doing a ton — and how Python deals with whitespace.</p>
+<h4 id="scraping-data-from-the-web">Scraping data from the web</h4>
 <p>Fetching data from the web was one of programming's original beachheads in the journalism world. We're going to grab a data table from a website and turn it into a delimited text file to use in a spreadsheet or database manager.</p>
 <p>This is a task one could arguably accomplish using Excel's "import from web" feature, so we're going to take it one step further: we'll alter our script to drill into additional detail pages and automatically extract more columns of data for our text file.</p>
-<h3 id="395parse_addresses"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/3_parse_addresses">3_parse_addresses</a></h3>
+<p>We'll also drill into the finer points of using the BeautifulSoup library to parse HTML, reading and writing CSV files, and targeting data with regular expressions.</p>
+<h4 id="parsing-records-that-fall-across-multiple-lines">Parsing records that fall across multiple lines</h4>
 <p>Data don't always arrive in a nice, neat table. We have hundreds of addresses to parse into a format that will work in Excel or a database manager, and Python is going to help us make it happen. We'll write a script that dices it all and puts everything in its proper place -- one line for one location.</p>
-<h3 id="495make_function"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/4_make_function">4_make_function</a></h3>
+<h4 id="making-a-reusable-function">Making a reusable function</h4>
 <p>In this quick project, we'll modify the address parsing script we wrote in the previous exercise, turning it into a reusable function that we can apply to future address lists that arrive in the same problematic format.</p>
-<h3 id="595geocode"><a href="https://github.com/richardsalex/coding_for_journos/tree/master/5_geocode">5_geocode</a></h3>
-<p>Geocoding is one of those perennial data journalism problems that's gotten easier in some ways over the years, yet harder in others. While having a street address is great, having a latitude and longitude is better. We'll take the poorly formatted addresses we coaxed into a flat file and march them one at a time through an online geocoding service using a handy Python library called <a href="https://github.com/geopy/geopy">geopy</a>. </p>
+<h4 id="geocoding-with-python">Geocoding with Python</h4>
+<p>Geocoding is one of those perennial data journalism problems that's gotten easier in some ways over the years, yet harder in others. While having a street address is great, having a latitude and longitude is better. We'll take the poorly formatted addresses we coaxed into a flat file and march them one at a time through an online geocoding service using a handy Python library called <a href="https://github.com/geopy/geopy">geopy</a>.</p>
+<h4 id="working-with-apis-and-databases">Working with APIs and databases</h4>
+<p>Application Programming Interfaces have become a common spigot for data on the web. We'll tap into one maintained by the city of Chicago that deals with crime and send it to a table in a SQLite database. From there, we'll write some scripted queries to isolate interesting information.</p>
+<p>We'll also dig in on how Python interacts with databases and how it deals with dates and times.</p>
+<h4 id="unlocking-data-stuck-in-a-database">Unlocking data stuck in a database</h4>
+<p>A database is a great reporting tool, having your data and analysis locked up there don't help your audience much. We're going to work with the same crime data we processed earlier and turn it into a web-friendly format (GeoJSON) for automatic display on a very basic Leaflet.js map. </p>
+<h4 id="the-wonderful-world-of-data-cleaning">The wonderful world of data cleaning</h4>
+<p>Once you figure out what the problems are with a data set, you can outsource the tedious cleaning process to Python. We'll focus on a few different types of cleaning you're likely to encounter in your reporting life, including Excel files where data is scattered around different rows and columns, CSV files with obvious errors that </p>
+<h4 id="other-kinds-of-scrapes">Other kinds of scrapes</h4>
+<p>We're not always after web tables; sometimes we're trying to collect a bunch of files scattered around a website or need to POST some data in order to get a response from a dynamic page, like a government site that uses ASP.NET. </p>
+<h4 id="the-deal-with-text-encoding-and-debugging-your-scripts">The deal with text encoding and debugging your scripts</h4>
+<p>What's ASCII? Why the hell am I getting <code>UnicodeEncodeError</code>? We'll deal sporadically with text encoding in some of these other lessons, but we'll focus on why it's important and what you can do to stay on top of it. In addition, we'll look through common errors you'll run into, what they mean and how to fix them.</p>
               
             </div>
           </div>
@@ -194,7 +230,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="task1/" class="btn btn-neutral float-right" title="Getting started"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="install/" class="btn btn-neutral float-right" title="Setting up your computer"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -205,7 +241,7 @@
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>©2015, <a href="www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+      <p>©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
     
   </div>
 
@@ -226,7 +262,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="task1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="install/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -236,5 +272,5 @@
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2015-06-29 19:44:13.498879
+Build Date UTC : 2015-11-04 02:13:19.359753
 -->

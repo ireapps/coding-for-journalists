@@ -1,6 +1,4 @@
-# 1_start
-
-
+#### Introduction
 
 Before we do anything, we need to understand some of the components we'll be interacting with and switching between.
 
@@ -22,15 +20,17 @@ This is a crash course in some of Python's major data types and and how to tame 
 
 We'll be using iPython's interactive interpreter, which means we have access to a few extra features (which iPython modestly calls *magic functions*).
 
-But first we have to fetch all these files. Using git and GitHub is a little bit outside the scope of this class (at the moment), so we'll download a [zipped copy of the repo](https://github.com/richardsalex/coding_for_journos/archive/master.zip), unzip it, and navigate to it using PowerShell.
-
-This exercise has three files:
+The files in this folder:
 
 - **var.py**: A Python script with some variables of different types like integers, lists and dictionaries.
 
 - **exercises.py**: A file that gives a list of exercises in the form of comments; guidance on how to manipulate the variables in **var.py**. It's also the place we can write code to save for future reference. Nearly everything we do in this task will use iPython.
 
-- **exercises_done.py**: Same as above, but with all the code filled in.
+- **fun_with_subs.py**: A file for practicing string substitutions, which is something we'll be doing frequently. It covers the depreciated method you'll encounter frequently and covers ```str.format()```.
+
+- **whitespace.py**: A guide to how Python decides which blocks of code to run when; it's all controlled by indentation.
+
+Any finished versions will appear in the **completed** folder.
 
 Opening iPython is as easy as typing ```ipython``` into PowerShell.
 
