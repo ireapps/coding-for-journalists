@@ -20,16 +20,14 @@ with open('some_text.txt', 'rb') as infile:
 # Easy fix: decode each line and print.	
 for line in new_text:
 	prefix = u"This is a line: "
-	print prefix + line
+	print prefix + line.decode('cp1252')
 
-# Save decoded strings to a new list here.
+# Save decoded strings to a new list.
+decoded_text = []
+for line in new_text:
+	decoded_text.append(line.decode('cp1252'))
 
-
-
-
-
-# This will come out as garbage unless we encode. Switch from new_text to
-# the decoded_text, and then encode during the write.
+# This will come out as garbage unless we encode.
 with open('output_text.txt', 'wb') as outfile:
-	for line in new_text:
-		outfile.write(line)
+	for line in decoded_text:
+		outfile.write(line.encode('utf8'))
