@@ -118,6 +118,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#cleaning-data">Cleaning data</a></li>
+                
+            
             </ul>
         
     </li>
@@ -180,7 +183,45 @@
           <div role="main">
             <div class="section">
               
-                
+                <h4 id="cleaning-data">Cleaning data</h4>
+<p>No data are ever perfect, but that doesn't mean you're not going to have to tangle with its shortcomings on deadline. Once we assess the issues, we can outsource the tedium of cleaning to a Python script. If we ever receive an updated data set from the same source, we have an automated way to run through out and output something we can use for reporting.</p>
+<p>This exercise hits three different kinds of cleaning that are fairly common:</p>
+<ul>
+<li>
+<p>Data that don't arrive in flat file format, where one row equals one record. We'll work through a very formatted Excel file of candidate filings and convert it to a worksheet we can use.</p>
+</li>
+<li>
+<p>Data that are just plain dirty: leading and trailing spaces, misspellings, unnecessary characters and more.</p>
+</li>
+<li>
+<p>Parsing out names. We'll scrape some board and commission pages from the city of Chicago's website and use some hints in table to help us split names into title, first, middle, last and suffix.</p>
+</li>
+</ul>
+<p>The files:</p>
+<ul>
+<li>
+<p><strong>excel.py</strong>: The script we'll write to turn formatted Excel designed for printing into a flat file we can use for analysis and reporting.</p>
+</li>
+<li>
+<p><strong>fun_with_excel.py</strong>: A tour of the <code>openpyxl</code> library and how it can read and write Microsoft Excel formats from 2007 and later.</p>
+</li>
+<li>
+<p><strong>clean_csv.py</strong>: We'll write Python in this to process a dirty CSV file.</p>
+</li>
+<li>
+<p><strong>names.py</strong>: The script that will scrape board and commission pages and process the names.</p>
+</li>
+<li>
+<p><strong>Candidates.xlsx</strong>: Our formatted Excel file of campaign filings.</p>
+</li>
+<li>
+<p><strong>Candidates_backup.xlsx</strong>: A backup of the formatted Excel file (in case we mess it up). </p>
+</li>
+<li>
+<p><strong>rahm_spending.csv</strong>: The problematic CSV file with dirty columns. </p>
+</li>
+</ul>
+<p>In case of no internet, <strong>boards_backup</strong> contains the files to scrape for <strong>names.py</strong>. Finished versions are in <strong>completed</strong>.</p>
               
             </div>
           </div>

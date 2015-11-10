@@ -111,6 +111,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#unlocking-data-from-databases">Unlocking data from databases</a></li>
+                
+            
             </ul>
         
     </li>
@@ -180,7 +183,27 @@
           <div role="main">
             <div class="section">
               
-                
+                <h4 id="unlocking-data-from-databases">Unlocking data from databases</h4>
+<p>Most of the internet demands data in forms that play nicely with it — especially for visualization. JavaScript libraries that dynamically assemble charts, graphs and maps typically want something that looks a lot more like the JSON we got from the crime API over a CSV file or a database table. And that's OK, because it just gives Python another chance to shine.</p>
+<p>We're going to write a few scripts that convert our crime data into <a href="http://geojson.org/">GeoJSON</a>, which is designed specifically to store geographic data like points, lines and polygons, as well as data that may be associated with those shapes.</p>
+<p>From there, we're going to layer them on a very basic <a href="http://leafletjs.com/">Leaflet.js</a> map that was hacked together from a few of their <a href="http://leafletjs.com/examples.html">tutorials</a>. </p>
+<p>Instead of having to load data into a GIS program like Esri's ArcGIS or the open-source QGIS and spend the time manually joining a table from a database to a shapefile and then exporting the whole affair to a web-friendly format, we'll handle it two ways.</p>
+<p>First, we'll write a section of script so that Python will generate GeoJSON straight from a database table. We'll use a new data type, <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict"><code>OrderedDict</code></a>, to store key/value pairs as well as the order in which they are added.</p>
+<p>The next section of the Python script will process an existing GeoJSON polygon shapefile. It will check the ID of each polygon against an existing data set; if it finds a match, it will write new data into the shape.</p>
+<p>The whole point here is that you can have Python acting as an autonomous data depot, pulling down new data from one side and sending it to update dynamic visualizations from the other.</p>
+<p>We'll use the following files for this project:</p>
+<ul>
+<li>
+<p><strong>to_json.py</strong>: The script we'll write to make and alter GeoJSON files based on information in our existing crime.db.</p>
+</li>
+<li>
+<p><strong>chicago_crime.html</strong>: An HTML file that contains JavaScript. It uses Leaflet.js to draw a map and other functions that are part of that library to incorporate GeoJSON files as map layers.</p>
+</li>
+<li>
+<p><strong>comm_areas.geojson</strong>: A GeoJSON file that contains all of Chicago's community areas. This originally existed as an Esri shapefile but was converted to this format in QGIS; there are also command line tools available that can do this, like <a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>.</p>
+</li>
+</ul>
+<p>A finished version of the Python script is in <strong>completed</strong>. </p>
               
             </div>
           </div>

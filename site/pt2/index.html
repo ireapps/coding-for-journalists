@@ -76,7 +76,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#295web_scrape">2_web_scrape</a></li>
+                <li class="toctree-l3"><a href="#scraping-the-web">Scraping the web</a></li>
                 
             
             </ul>
@@ -183,14 +183,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="295web_scrape">2_web_scrape</h1>
-<p>Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from <a href="https://github.com/richardsalex/coding_for_journos/tree/master/1_start">1_start</a> to varying degrees and in different combinations to create longer scripts.</p>
+                <h3 id="scraping-the-web">Scraping the web</h3>
+<p>Now that we've familiarized ourselves with the ways Python works, we have a little bit of a foundation to build from. Nearly everything else we do today is going to be using the fundamentals from <a href="../pt1/">the intro</a> to varying degrees and in different combinations to create longer scripts.</p>
 <p>So let's scrape a web page. We want to collect all the data from the main table on the U.S. Nuclear Regulatory Commission's <a href="http://www.nrc.gov/reactors/operating/list-power-reactor-units.html">list of domestic power reactor units</a>.</p>
 <p>Python comes with a library installed that's designed specifically for reading and writing CSV files (<a href="https://docs.python.org/2/library/csv.html"><code>csv</code></a>), but we're also going to need to extend Python's functionality a bit by bringing in two other libraries.</p>
 <p>One is <a href="http://docs.python-requests.org/en/latest/"><code>requests</code></a> -- it handles the job of playing a web browser that can fetch a web page and send back the underlying HTML. The other is <a href="http://www.crummy.com/software/BeautifulSoup/"><code>BeautifulSoup</code></a>, which parses the HTML into what amounts to a series of lists that we can then search, navigate and extract data from.</p>
 <p>When we get to part two, we'll use the built-in regular expressions library <a href="https://docs.python.org/2/library/re.html"><code>re</code></a> to isolate some text from the detail pages and <a href="https://docs.python.org/2/library/time.html"><code>time</code></a> to keep us from swamping a government site with too many requests at once.</p>
 <p>A big thank you to <a href="https://twitter.com/anthonydb">Anthony DeBarros</a> for allowing us to present a modified version of his web scraping example from <a href="https://github.com/anthonydb/python-get-started">python-get-started</a>.</p>
-<p>This exercise contains six files:</p>
+<p>We'll use the following files:</p>
 <ul>
 <li>
 <p><strong>scrape.py</strong>: The file we'll use to write our scraping script, following the comments.</p>
@@ -205,12 +205,16 @@
 <p><strong>table_example.html</strong>: A bare bones HTML table that shows the basic tags and how they're nested, with the flourishes of a modern web page stripped away -- it's ugly.</p>
 </li>
 <li>
-<p><strong>scrape_done.py</strong>: A completed and working version of <strong>scrape.py</strong>.</p>
+<p><strong>fun_with_bs.py</strong>: A primer for some of BeautifulSoup's most relevant commands for navigating HTML.</p>
 </li>
 <li>
-<p><strong>scrape_pt2_done.py</strong>: A completed and working version of <strong>scrape_pt2.py</strong>. </p>
+<p><strong>fun_with_csv.py</strong>: A brief example of how Python uses its standard csv library to read and write delimited-text files.</p>
+</li>
+<li>
+<p><strong>fun_with_regex.py</strong>: A file that covers some regular expresses in Python for finding and isolating text.</p>
 </li>
 </ul>
+<p>Finished versions will appear in the <strong>completed</strong> folder.</p>
               
             </div>
           </div>

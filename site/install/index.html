@@ -351,12 +351,20 @@ pip -V</code></pre>
 open -e ~/.bash_profile</code></pre>
 
 
+<p>The following lines need to be added once it's been opened:</p>
+<pre class="codehilite"><code class="language-bash">export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh</code></pre>
+
+
+<p>The first line just sets up a directory for your virtual environments; if you don't want them in your Home directory in a folder called "Envs," you can change the path accordingly.</p>
+<p>The second line is a hook for <strong>virtualenvwrapper</strong> so that its commands will work when you type them in the Terminal. </p>
 <hr />
 <p>7. <strong>Reload your .bash_profile</strong></p>
 <p>So that these new changes take effect, type:</p>
 <pre class="codehilite"><code class="language-bash">source ~/.bash_profile</code></pre>
 
 
+<p>You should see several new thing run in the Terminal after the reload as it makes a place for your environments.</p>
 <hr />
 <h2 id="test-run">Test run</h2>
 <pre class="codehilite"><code class="language-bash">mkvirtualenv mytest
@@ -366,6 +374,14 @@ workon mytest
 pip list mytest</code></pre>
 
 
+<p>These lines do the following:</p>
+<ul>
+<li>Create a new virtual environment called "mytest"</li>
+<li>Exit the "mytest" environment</li>
+<li>List the virtual environments that presently exist</li>
+<li>Move into the "mytest" environment again</li>
+<li>List all libraries presently installed in "mytest"</li>
+</ul>
 <hr />
 <h2 id="getting-coding-for-journalists">Getting "Coding for Journalists"</h2>
 <p>A repository for all of the files is presently hosted on GitHub, which is likely how you navigated here in the first place. You can just <a href="https://github.com/ireapps/coding-for-journalists/archive/master.zip">copy a zipped version</a> of all the files for your use or fork it using GitHub's desktop application or git from the command line. For help with git and GitHub, there are some <a href="../next_steps/">resources in "Next Steps."</a></p>

@@ -132,6 +132,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#encoding-and-debugging">Encoding and debugging</a></li>
+                
+            
             </ul>
         
     </li>
@@ -180,7 +183,26 @@
           <div role="main">
             <div class="section">
               
-                
+                <h4 id="encoding-and-debugging">Encoding and debugging</h4>
+<p>It's hard to succinctly describe why text encoding is a problem. Basically, it stems from the early days of computing when Western characters mattered. Others, not so much — they were barely an afterthought. </p>
+<p>By the way, the em-dash on the last sentence? That can be represented many different ways based on the encoding of the text.</p>
+<p>Different encodings translate the bits that underpin all manner of characters into what we actually see on screen. Many have the same for A through Z, 0 through 9 and basic punctuation, so you don't even know you have a problem.</p>
+<p>For more information, read this <a href="http://www.joelonsoftware.com/articles/Unicode.html">sweeping overview</a>.</p>
+<p>When it's a problem, the trick is to decode your input early into <a href="https://en.wikipedia.org/wiki/Unicode">unicode</a>, do whatever you need to do with your code, and then encode back into something like UTF8 when it's been written to a file.</p>
+<p>We encountered this a bit during our scrape at the beginning of the workshop. We had a few columns in the table with these other characters, and we were combining them with regular strings into individual lines that would be written to a CSV. We encoded them before they were written so they didn't break our script.</p>
+<p>Files to use:</p>
+<ul>
+<li>
+<p><strong>encoding.py</strong>: A script where we're trying to read a text file, print the lines to the screen and then write the output to another text file. It's not working out so well.</p>
+</li>
+<li>
+<p><strong>broken_code.png</strong>: Flow chart for common errors in Python, what they mean and what else you can check when things aren't working out exactly as you expect them to.</p>
+</li>
+<li>
+<p><strong>some_text.txt</strong>: A simple text file, encoded in Windows-1252, known by <a href="https://docs.python.org/2/library/codecs.html#standard-encodings">Python as 'cp1252.'</a></p>
+</li>
+</ul>
+<p>As always, a working version of the script is in <strong>completed</strong>.</p>
               
             </div>
           </div>

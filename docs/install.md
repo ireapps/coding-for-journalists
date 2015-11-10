@@ -220,6 +220,16 @@ touch ~/.bash_profile
 open -e ~/.bash_profile
 ```
 
+The following lines need to be added once it's been opened:
+
+```bash
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+```
+The first line just sets up a directory for your virtual environments; if you don't want them in your Home directory in a folder called "Envs," you can change the path accordingly.
+
+The second line is a hook for **virtualenvwrapper** so that its commands will work when you type them in the Terminal. 
+
 ----
 
 7\. **Reload your .bash_profile**
@@ -228,6 +238,8 @@ So that these new changes take effect, type:
 ```bash
 source ~/.bash_profile
 ```
+
+You should see several new thing run in the Terminal after the reload as it makes a place for your environments.
 
 ----
 
@@ -240,6 +252,15 @@ workon
 workon mytest
 pip list mytest
 ```
+
+These lines do the following:
+
+- Create a new virtual environment called "mytest"
+- Exit the "mytest" environment
+- List the virtual environments that presently exist
+- Move into the "mytest" environment again
+- List all libraries presently installed in "mytest"
+
 ----
 
 ## Getting "Coding for Journalists"
