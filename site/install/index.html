@@ -207,7 +207,7 @@
 <li><strong>A connection to the internet</strong></li>
 </ul>
 <p>Here's what the various parts do, as well as why you need them:</p>
-<p><strong>The text editor</strong> allows you to write scripts for the Python interpreter in a plain text format. Something along the lines of a full word processor (think Microsoft Word or Apple's Pages) won't cut it; those are designed for presentation and resulting files will be cluttered with a bunch of elements that control text styling. Having one at your disposal is a must for writing code and great for examining data.</p>
+<p><strong>The text editor</strong> allows you to write scripts for the Python interpreter in a plain text format. Something along the lines of a full word processor (think Microsoft Word or Apple's Pages) won't cut it; those are designed for presentation and resulting files will be cluttered with a bunch of elements that control text styling. Having one at your disposal is a must for writing code and great for examining data. A good text editor can also interpret code and shade text to differentiate between elements like variables, strings, comments, etc.</p>
 <p><strong>Python</strong> is the engine of the entire affair; it's a code interpreter that's going to look at the commands you write and then faithfully execute them. At the moment this code and guide is designed around version 2.7.</p>
 <p><strong>Access to a command line interface</strong> in the form of the OS X terminal or Windows command prompt. It will be used to run Python scripts and access the Python interpreter.</p>
 <p><strong>pip</strong> is an external Python library that helps you manage the download and installation of packages that don't come with standard Python. There's a lot there already, sure, but people have written new modules to assist with tasks like web scraping and dealing with PDF files. It makes adding new functionality as easy as typing <code>pip install &lt;some new package&gt;</code>. <strong>pip</strong> will fetch it from the internet and install it for you -- and do the same for any other packages required to make it all work correctly.</p>
@@ -217,16 +217,21 @@
 <h2 id="on-windows">On Windows</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This guide is for Windows 8.1. For other versions of Windows, this process should be similar.</p>
+<p>This guide was written specifically for Windows 8.1. For newer versions of Windows, this process should be similar. If you're on Windows 7, <a href="http://www.anthonydebarros.com/2011/10/15/setting-up-python-in-windows-7/">this guide</a> can help with the Python and <strong>pip</strong> portions of this process.</p>
 </div>
+<hr />
 <p>1. <strong>Download Python 2.7</strong></p>
 <p>You'll want to download the <a href="https://www.python.org/downloads/windows">most current release of Python 2 for Windows</a>; you'll likely have the best luck with the <em>Windows x86 MSI installer</em>.</p>
 <hr />
 <p>2. <strong>Install Python 2.7</strong></p>
 <p>After opening the installer, there are two things you'll want to include during the installation process that should make your life much easier.</p>
 <p>First, the installer will give you the option of having <strong>pip</strong> ride along with the rest of the Python installation. By default, this should already be selected for you.</p>
-<p>Second, the installer will give you the option to add python.exe to your PATH. All that means is that typing <code>python</code> at the command prompt will get you to the interpreter or give you the ability to execute a Python script, regardless of where you've navigated on your system. By default, this will <strong>not</strong> be selected; you'll have to change it on your own.</p>
-<p><strong>Make sure both of these options are selected before completing the install.</strong></p>
+<p>Second, the installer will give you the option to add python.exe to your PATH. All that means is that typing <code>python</code> at the command prompt will get you to the interpreter or give you the ability to execute a Python script, regardless of where you've navigated on your system. </p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>By default, the option to automatically add Python to your Windows PATH will <strong>not be selected</strong>; you'll have to change that setting on your own during the install or nothing beyond this point will work for you.</p>
+</div>
+<p><strong>Again, make sure both of these options are selected before completing the install.</strong></p>
 <hr />
 <p>3. <strong>Verify installation of Python and pip</strong></p>
 <p>Open the Windows command prompt. If you're unable to locate it in the "Start" menu, search for an application called <strong>cmd</strong>.</p>
@@ -278,7 +283,7 @@ setuptools (16.0)</code></pre>
 <p class="admonition-title">Caution</p>
 <p><strong>Tcl</strong> and <strong>tk</strong> come with Python 2.7 and don't appear to automatically work inside of Windows virtualenvs; this will derail things like <code>%paste</code> in iPython. You'll need to navigate to the virtualenv's folder and modify the <code>activate.bat</code> script by adding the following lines (with the paths to your installation of Python — defaults below): </p>
 </div>
-<pre class="codehilite"><code class="language-bash">set &quot;TCL_LIBRARY=C:\Python27\tcl\tcl8.5&quot;
+<pre class="codehilite"><code class="language-bat">set &quot;TCL_LIBRARY=C:\Python27\tcl\tcl8.5&quot;
 set &quot;TK_LIBRARY=C:\Python27\tcl\tk8.5&quot;</code></pre>
 
 
@@ -293,15 +298,18 @@ set &quot;TK_LIBRARY=C:\Python27\tcl\tk8.5&quot;</code></pre>
 <p>The version accompanying OS X has been tinkered with by Apple, and it's responsible for other functionality on your computer. It's also likely out of date.</p>
 <p>The accepted way to get around this problem is to install an OS X program called <a href="http://brew.sh/">Homebrew</a>, which is essentially a package manager for your system — similar to what pip does for Python. It will allow you to download an independent and updateable version of Python that you can use going forward. A side benefit is that pip comes with the Python you install with Homebrew.</p>
 <p>Not to evangelize about Homebrew too much, but if you decide to travel down the path leading to some of the more complex data journalism techniques on the command line, you'll find other uses for Homebrew and its many packages beyond just providing a clean copy of Python.</p>
-<p>It has downsides; Homebrew requires a current version of Apple's Xcode's command line tools to be installed on your computer first. A full guide is <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md">available here</a> to get you up and running.</p>
+<p>It has downsides; Homebrew requires a current version of Apple's Xcode's command line tools to be installed on your computer first. The easiest route for installation is detailed right on its <a href="http://brew.sh/">home page</a>; additional information, including a list of system requirements is <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md">available here</a>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Changes in OS X 10.11 El Capitan can make this process even trickier. Apple insituted extra system protections that have the capability of adding a few steps to the Homebrew install process. If you're running into these issues, <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md">read this</a> for more information.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also use the built-in OS X Python if you wish. The next step in that case will be getting pip up and running.</p>
+<p>Sometimes your system will have trouble sniffing out the route to the version of Python installed by Homebrew. An easy way to check is by typing <code>which python</code>, a command that checks the full path of what's being executed. Anything installed by Homebrew, by default, is at <code>/usr/local/bin/</code>, so you should see <code>/usr/local/bin/python</code>. </p>
+<p>If that's not what you see, <code>echo $PATH</code> will show you where it's looking for Python. If the first item in the list is not <code>/usr/local/bin</code>, you'll need to reorder your system path. A guide to walk you through a couple of modification options is <a href="http://daniel.hepper.net/blog/2011/02/change-order-of-path-entries-on-mac-os-x/">here</a>.</p>
 </div>
+<p>To be clear, you can also use the built-in OS X Python if you wish. For the exercises here, it should not be a problem. In that case, the next step in that case will be getting pip up and running.</p>
+<hr />
 <p>1. <strong>Check for pip</strong></p>
 <p>Homebrew's Python comes with pip in tow. If you're using the OS X system version, let's see if it's installed. Open the Terminal and type the following:</p>
 <pre class="codehilite"><code class="language-bash">pip -V</code></pre>
@@ -328,7 +336,7 @@ pip -V</code></pre>
 <pre class="codehilite"><code class="language-bash">pip install virtualenv</code></pre>
 
 
-<p>It should appear among pip and setuptools when you type <code>pip list</code> and you should be able to verify the version with:</p>
+<p>It should appear among <strong>pip</strong> and <strong>setuptools</strong> when you type <code>pip list</code> and you should be able to verify the version with:</p>
 <pre class="codehilite"><code class="language-bash">virtualenv --version</code></pre>
 
 
@@ -367,6 +375,7 @@ source /usr/local/bin/virtualenvwrapper.sh</code></pre>
 <p>You should see several new thing run in the Terminal after the reload as it makes a place for your environments.</p>
 <hr />
 <h2 id="test-run">Test run</h2>
+<p>Moment of truth — is everything working as expected? Let's find out.</p>
 <pre class="codehilite"><code class="language-bash">mkvirtualenv mytest
 deactivate
 workon
@@ -389,7 +398,7 @@ pip list mytest</code></pre>
 <pre class="codehilite"><code class="language-bash">mkvirtualenv cfj</code></pre>
 
 
-<p>You should automatically be placed inside the new virtualenv after creation. From there, the <code>requirements.txt</code> file within the main folder lists every necessary library to make these scripts run.</p>
+<p>Now, I've called the this new environment "cfj" — it could really be anything you like that's short and descriptive. You should automatically be placed inside the new virtualenv after creation. From there, the <code>requirements.txt</code> file within the main folder lists every necessary library to make these scripts run.</p>
 <pre class="codehilite"><code class="language-bash">pip install -r requirements.txt</code></pre>
 
 

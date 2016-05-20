@@ -23,17 +23,14 @@ my_integer = 14
 # Define a float (number that contains a fraction of one) called my_float.
 my_float = 5.45
 
-# Define a text string in unicode format (we'll see these pop up throughout.
-# the workshop.
-my_unicode_string = u'ASCII is holding me back — you know it\'s true.'
-
 # Define a boolean value (True/False) called my_boolean.
 my_boolean = True
 
 # Print my_string.
 print my_string
 
-# Print my_string and my_other_string together.
+# Print my_string and my_other_string together using a plus (+) to
+# concatenate.
 print my_string + my_other_string
 
 # Let's get a space in there.
@@ -247,9 +244,10 @@ for month in months:
 for key in person_info:
     print key
 
-# Write a for loop that prints the key/value pair in our person_info dictionary
+# Write a for loop that prints the key/value pair in our person_info
+# dictionary. We can also use commas in a similar fashion as plus above.
 for key in person_info:
-    print 'The key is '+key+' and the value is '+person_info[key]
+    print 'The key is', key, 'and the value is', person_info[key]
 
 # A for loop that gives a quick summary of each list in multi_list
 for sublist in multi_list:
@@ -270,33 +268,38 @@ else:
 # ------------------
 
 # Define a basic function that prints the word 'beans'
-def PrintBeans():
-    print 'Beans'
+
+
+def print_beans():
+    print 'Beans!'
 
 # Run the PrintBeans() function.
-PrintBeans()
+print_beans()
 
 # Define another basic function that multiplies a number by itself
 
 
-def Square(number):
-    print number * number
+def square(number):
+    return number * number
 
 # Find the square of 27.
-Square(27)
+square(27)
+
+# Put the square of 47 into a new variable.
+square_result = square(47)
 
 # Try finding the square of 'apple.'
-Square('apple')
+square('apple')
 
 # Let's turn that list summary for loop from earlier into a function
 
 
-def ListSummary(list):
+def list_summary(list):
     for sublist in list:
         print 'This list has', len(sublist), 'items:'
         for item in sublist:
             print item
-        print '\n'
+        print ''
 
 # Append the months list to multi_list; run the ListSummary function on it
 multi_list.append(months)
