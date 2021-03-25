@@ -13,7 +13,7 @@ MarkupSafe==0.23
 mkdocs==0.14.0
 openpyxl==2.3.0
 pyreadline==2.1
-PyYAML==3.11
+PyYAML==5.4
 requests==2.7.0
 six==1.9.0
 tornado==4.2
