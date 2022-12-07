@@ -1,6 +1,6 @@
 backports.ssl-match-hostname==3.4.0.2
 beautifulsoup4==4.3.2
-certifi==2015.4.28
+certifi==2022.12.7
 click==4.0
 et-xmlfile==1.0.1
 geopy==1.10.0
